@@ -3,9 +3,6 @@ import {ExchangeHolding, ExchangeType} from "../providers/providers";
 import {MessageId} from "../abstract.messages/Messages";
 
 
-
-
-
 export class FileSendMessage extends MessageId {
     public photo: Buffer;
     constructor(id:number, photo:Buffer) {
