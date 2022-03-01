@@ -7,8 +7,8 @@ import {MessageId} from "../abstract.messages/Messages";
 
 
 export class FileSendMessage extends MessageId {
-    public photo: any;
-    constructor(id:number, photo:any) {
+    public photo: Buffer;
+    constructor(id:number, photo:Buffer) {
         super(id);
         this.photo = photo;
     }

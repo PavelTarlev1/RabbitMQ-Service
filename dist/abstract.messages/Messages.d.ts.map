@@ -1,0 +1,1 @@
+{"version":3,"file":"Messages.d.ts","sourceRoot":"","sources":["../../src/abstract.messages/Messages.ts"],"names":[],"mappings":"AAEA,8BAAsB,QAAQ;CAE7B;AAED,8BAAsB,SAAU,SAAQ,QAAQ;IAIrC,EAAE,EAAE,MAAM,CAAC;IAClB,SAAS,aAAa,EAAE,KAAA;CAI3B;AAED,8BAAsB,eAAgB,SAAQ,SAAS;IAK5C,QAAQ,EAAE,MAAM,CAAC;IAExB,SAAS,aAAa,EAAE,EAAC,MAAM,EAAE,QAAQ,EAAE,MAAM;CAIpD"}
