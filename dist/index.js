@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./decorators/rabbitMQ.decorators"), exports);
 __exportStar(require("./test.topic/topics"), exports);
 __exportStar(require("./game-user-api.topic/game-user-topics"), exports);
-//export * from './file-manager.topic/file-manager.topic'
+__exportStar(require("./file-manager.topic/file-manager.topic"), exports);
 __exportStar(require("./abstract.topic"), exports);
 __exportStar(require("./abstract.messages/Messages"), exports);
 //# sourceMappingURL=index.js.map
