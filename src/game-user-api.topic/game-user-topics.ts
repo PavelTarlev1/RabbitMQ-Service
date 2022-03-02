@@ -10,7 +10,6 @@ import {MessageGameInfo, MessageId} from "../abstract.messages/Messages";
 // Delete GameInfo --- >
 // Delete AuthUser --- >
 
-
 // Creation --- >
 export class CreateUserDto extends MessageGameInfo {
     constructor(id:number,username: string) {
