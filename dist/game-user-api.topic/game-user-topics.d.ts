@@ -6,7 +6,6 @@ export declare class CreateUserDto extends MessageGameInfo {
 }
 export declare class CreateUserGameTopic extends Topic {
     messageType: CreateUserDto;
-    s: any;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;

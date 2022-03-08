@@ -21,7 +21,6 @@ exports.CreateUserDto = CreateUserDto;
 // CreationDto
 class CreateUserGameTopic extends abstract_topic_1.Topic {
     messageType;
-    s;
     exchange = providers_1.ExchangeHolding.gameUserApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'createGameUserInfo-queue';

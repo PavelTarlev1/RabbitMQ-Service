@@ -22,7 +22,7 @@ export class CreateUserDto extends MessageGameInfo {
 // CreationDto
 export class CreateUserGameTopic extends Topic {
     messageType: CreateUserDto;
-s
+
     exchange = ExchangeHolding.gameUserApiExchange;
     exchangeType = ExchangeType.Topic;
     queue = 'createGameUserInfo-queue';
