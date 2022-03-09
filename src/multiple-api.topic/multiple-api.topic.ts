@@ -16,6 +16,13 @@ export class DeleteAllCredentialsTopic extends Topic {
   exchange = ExchangeHolding.gameUserApiExchange;
   exchangeType = ExchangeType.Topic;
   queue = 'deleteAllCredentialsTopic-queue';
-  routingKey = 'deleteAllCredentialsTopic';
+  public routingKey: string;
+  constructor(routingKeyAttach: string) {
+    super();
+    this.routingKeyAttach = routingKeyAttach;
+    this.routingKey = `deleteAllCredentialsTopic${this.routingKeyAttach}`;
+  }
+  public routingKeyAttach: string;
 
 }
+
