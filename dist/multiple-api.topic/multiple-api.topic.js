@@ -16,13 +16,13 @@ class DeleteAllCredentialsTopic extends abstract_topic_1.Topic {
     exchange = providers_1.ExchangeHolding.gameUserApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'deleteAllCredentialsTopic-queue';
-    routingKey;
-    constructor(routingKeyAttach) {
+    routingKey = 'deleteAllCredentialsTopic';
+    queueAttach;
+    constructor(queueAttach) {
         super();
-        this.routingKeyAttach = routingKeyAttach;
-        this.routingKey = `deleteAllCredentialsTopic${this.routingKeyAttach}`;
+        this.queueAttach = queueAttach;
+        this.queue = `deleteAllCredentialsTopic${this.queueAttach}`;
     }
-    routingKeyAttach;
 }
 exports.DeleteAllCredentialsTopic = DeleteAllCredentialsTopic;
 //# sourceMappingURL=multiple-api.topic.js.map

@@ -10,7 +10,7 @@ export declare class DeleteAllCredentialsTopic extends Topic {
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
-    constructor(routingKeyAttach: string);
-    routingKeyAttach: string;
+    private queueAttach;
+    constructor(queueAttach: string);
 }
 //# sourceMappingURL=multiple-api.topic.d.ts.map
