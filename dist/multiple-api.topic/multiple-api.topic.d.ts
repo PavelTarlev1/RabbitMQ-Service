@@ -13,4 +13,16 @@ export declare class DeleteAllCredentialsTopic extends Topic {
     private queueAttach;
     constructor(queueAttach: string);
 }
+export declare class createAllCredentials extends MessageId {
+    constructor(id: number);
+}
+export declare class CreateAllCredentialsTopic extends Topic {
+    messageType: deleteAllCredentials;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+    private queueAttach;
+    constructor(queueAttach: string);
+}
 //# sourceMappingURL=multiple-api.topic.d.ts.map
