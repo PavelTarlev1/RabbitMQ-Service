@@ -34,4 +34,11 @@ export declare class DeleteFileTopic extends Topic {
     queue: string;
     routingKey: string;
 }
+export declare class ErrorFileTopic extends Topic {
+    messageType: DeleteFileMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
 //# sourceMappingURL=file-manager.topic.d.ts.map

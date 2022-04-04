@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteFileTopic = exports.DeleteFileMessage = exports.ResponseFileTopic = exports.ResponseSuccessMessage = exports.SendFileTopic = exports.FileSendMessage = void 0;
+exports.ErrorFileTopic = exports.DeleteFileTopic = exports.DeleteFileMessage = exports.ResponseFileTopic = exports.ResponseSuccessMessage = exports.SendFileTopic = exports.FileSendMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -52,4 +52,12 @@ class DeleteFileTopic extends abstract_topic_1.Topic {
     routingKey = 'DeleteFile-queue-key';
 }
 exports.DeleteFileTopic = DeleteFileTopic;
+class ErrorFileTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.authApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'ErrorFile-queue';
+    routingKey = 'ErrorFIle-queue-key';
+}
+exports.ErrorFileTopic = ErrorFileTopic;
 //# sourceMappingURL=file-manager.topic.js.map
