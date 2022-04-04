@@ -11,7 +11,7 @@ import {MessageGameInfo, MessageId} from "../abstract.messages/Messages";
 // Delete AuthUser --- >
 
 // Creation --- >
-export class CreateUserDto extends MessageGameInfo {
+export class CreateUserMessage extends MessageGameInfo {
     constructor(id:number,username: string) {
         super(id, username);
         this.id =id;
@@ -21,7 +21,7 @@ export class CreateUserDto extends MessageGameInfo {
 }
 // CreationDto
 export class CreateUserGameTopic extends Topic {
-    messageType: CreateUserDto;
+    messageType: CreateUserMessage;
 
     exchange = ExchangeHolding.gameUserApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -32,7 +32,7 @@ export class CreateUserGameTopic extends Topic {
 
 // PullData --- >
 export class PullUserTopic extends Topic {
-    messageType: PullUserDto;
+    messageType: PullUserMessage;
 
     exchange = ExchangeHolding.gameUserApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -40,7 +40,7 @@ export class PullUserTopic extends Topic {
     routingKey = 'findUserInfo-key';
 }
 // PullDataDto --- >
-export class PullUserDto extends MessageId {
+export class PullUserMessage extends MessageId {
     public userId: number;
     constructor(userId: number) {
         super(userId);
@@ -51,7 +51,7 @@ export class PullUserDto extends MessageId {
 
 // SendUser <---
 export class SendUserTopic extends Topic {
-    messageType:SendUserDto ;
+    messageType:SendUserMessage ;
 
     exchange = ExchangeHolding.gameUserApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -60,7 +60,7 @@ export class SendUserTopic extends Topic {
 
 }
 // SendUserDto < ---
-export class SendUserDto extends MessageGameInfo {
+export class SendUserMessage extends MessageGameInfo {
     constructor(id:number,username: string) {
         super(id,username)
         this.id = id;
@@ -71,7 +71,7 @@ export class SendUserDto extends MessageGameInfo {
 
 // deleteUser --- >
 export class DeleteUserTopic extends Topic {
-    messageType: DeleteUserDto;
+    messageType: DeleteUserMessage;
 
     exchange = ExchangeHolding.authApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -79,7 +79,7 @@ export class DeleteUserTopic extends Topic {
     routingKey = 'deleteGameUserInfo-key';
 }
 
-export class DeleteUserDto extends MessageId {
+export class DeleteUserMessage extends MessageId {
     public userId: number;
 
     constructor(userId: number) {
@@ -90,7 +90,7 @@ export class DeleteUserDto extends MessageId {
 
 
 export class ErrorUserTopic extends Topic {
-    messageType: ErrorUserDto;
+    messageType: ErrorUserMessage;
 
     exchange = ExchangeHolding.authApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -99,7 +99,7 @@ export class ErrorUserTopic extends Topic {
 
 }
 // errorGameUserDto <---
-export class ErrorUserDto extends MessageId {
+export class ErrorUserMessage extends MessageId {
     public userId: number;
     constructor(userId: number) {
         super(userId);

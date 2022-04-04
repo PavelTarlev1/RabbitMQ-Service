@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorUserDto = exports.ErrorUserTopic = exports.DeleteUserDto = exports.DeleteUserTopic = exports.SendUserDto = exports.SendUserTopic = exports.PullUserDto = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserDto = void 0;
+exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -10,14 +10,14 @@ const Messages_1 = require("../abstract.messages/Messages");
 // Delete GameInfo --- >
 // Delete AuthUser --- >
 // Creation --- >
-class CreateUserDto extends Messages_1.MessageGameInfo {
+class CreateUserMessage extends Messages_1.MessageGameInfo {
     constructor(id, username) {
         super(id, username);
         this.id = id;
         this.username = username;
     }
 }
-exports.CreateUserDto = CreateUserDto;
+exports.CreateUserMessage = CreateUserMessage;
 // CreationDto
 class CreateUserGameTopic extends abstract_topic_1.Topic {
     messageType;
@@ -37,14 +37,14 @@ class PullUserTopic extends abstract_topic_1.Topic {
 }
 exports.PullUserTopic = PullUserTopic;
 // PullDataDto --- >
-class PullUserDto extends Messages_1.MessageId {
+class PullUserMessage extends Messages_1.MessageId {
     userId;
     constructor(userId) {
         super(userId);
         this.userId = userId;
     }
 }
-exports.PullUserDto = PullUserDto;
+exports.PullUserMessage = PullUserMessage;
 // SendUser <---
 class SendUserTopic extends abstract_topic_1.Topic {
     messageType;
@@ -55,14 +55,14 @@ class SendUserTopic extends abstract_topic_1.Topic {
 }
 exports.SendUserTopic = SendUserTopic;
 // SendUserDto < ---
-class SendUserDto extends Messages_1.MessageGameInfo {
+class SendUserMessage extends Messages_1.MessageGameInfo {
     constructor(id, username) {
         super(id, username);
         this.id = id;
         this.username = username;
     }
 }
-exports.SendUserDto = SendUserDto;
+exports.SendUserMessage = SendUserMessage;
 // deleteUser --- >
 class DeleteUserTopic extends abstract_topic_1.Topic {
     messageType;
@@ -72,14 +72,14 @@ class DeleteUserTopic extends abstract_topic_1.Topic {
     routingKey = 'deleteGameUserInfo-key';
 }
 exports.DeleteUserTopic = DeleteUserTopic;
-class DeleteUserDto extends Messages_1.MessageId {
+class DeleteUserMessage extends Messages_1.MessageId {
     userId;
     constructor(userId) {
         super(userId);
         this.userId = userId;
     }
 }
-exports.DeleteUserDto = DeleteUserDto;
+exports.DeleteUserMessage = DeleteUserMessage;
 class ErrorUserTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.authApiExchange;
@@ -89,12 +89,12 @@ class ErrorUserTopic extends abstract_topic_1.Topic {
 }
 exports.ErrorUserTopic = ErrorUserTopic;
 // errorGameUserDto <---
-class ErrorUserDto extends Messages_1.MessageId {
+class ErrorUserMessage extends Messages_1.MessageId {
     userId;
     constructor(userId) {
         super(userId);
         this.userId = userId;
     }
 }
-exports.ErrorUserDto = ErrorUserDto;
+exports.ErrorUserMessage = ErrorUserMessage;
 //# sourceMappingURL=game-user-topics.js.map

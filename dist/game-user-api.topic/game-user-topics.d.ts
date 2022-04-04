@@ -1,56 +1,56 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
 import { MessageGameInfo, MessageId } from "../abstract.messages/Messages";
-export declare class CreateUserDto extends MessageGameInfo {
+export declare class CreateUserMessage extends MessageGameInfo {
     constructor(id: number, username: string);
 }
 export declare class CreateUserGameTopic extends Topic {
-    messageType: CreateUserDto;
+    messageType: CreateUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
 export declare class PullUserTopic extends Topic {
-    messageType: PullUserDto;
+    messageType: PullUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class PullUserDto extends MessageId {
+export declare class PullUserMessage extends MessageId {
     userId: number;
     constructor(userId: number);
 }
 export declare class SendUserTopic extends Topic {
-    messageType: SendUserDto;
+    messageType: SendUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class SendUserDto extends MessageGameInfo {
+export declare class SendUserMessage extends MessageGameInfo {
     constructor(id: number, username: string);
 }
 export declare class DeleteUserTopic extends Topic {
-    messageType: DeleteUserDto;
+    messageType: DeleteUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class DeleteUserDto extends MessageId {
+export declare class DeleteUserMessage extends MessageId {
     userId: number;
     constructor(userId: number);
 }
 export declare class ErrorUserTopic extends Topic {
-    messageType: ErrorUserDto;
+    messageType: ErrorUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class ErrorUserDto extends MessageId {
+export declare class ErrorUserMessage extends MessageId {
     userId: number;
     constructor(userId: number);
 }
