@@ -34,7 +34,7 @@ export class WebsocketNotifyAllMessage extends MessageId {
     }
 }
 
-export class WebsocketNotifyUser extends Topic {
+export class WebsocketNotifyUserTopic extends Topic {
   messageType: FileSendMessage;
 
   exchange = ExchangeHolding.fileManagerExchange;

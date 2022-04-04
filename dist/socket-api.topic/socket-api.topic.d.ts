@@ -15,7 +15,7 @@ export declare class WebsocketNotifyAllMessage extends MessageId {
     private payload;
     constructor(id: number, event: any, payload: any);
 }
-export declare class WebsocketNotifyUser extends Topic {
+export declare class WebsocketNotifyUserTopic extends Topic {
     messageType: FileSendMessage;
     exchange: string;
     exchangeType: ExchangeType;
