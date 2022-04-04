@@ -20,4 +20,5 @@ __exportStar(require("./game-user-api.topic/game-user-topics"), exports);
 __exportStar(require("./file-manager.topic/file-manager.topic"), exports);
 __exportStar(require("./abstract.topic"), exports);
 __exportStar(require("./abstract.messages/Messages"), exports);
+__exportStar(require("./socket-api.topic/socket-api.topic"), exports);
 //# sourceMappingURL=index.js.map
