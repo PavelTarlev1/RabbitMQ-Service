@@ -15,9 +15,9 @@ class WebsocketNotifyUserMessage extends Messages_1.MessageId {
     event;
     payload;
     userId;
-    constructor(userId, event, payload) {
-        super(userId);
-        this.userId = userId;
+    constructor(id, event, payload) {
+        super(id);
+        this.userId = id;
         this.event = event;
         this.payload = payload;
     }

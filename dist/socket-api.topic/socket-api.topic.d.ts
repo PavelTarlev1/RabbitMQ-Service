@@ -8,7 +8,7 @@ export declare class WebsocketNotifyUserMessage extends MessageId {
     private event;
     private payload;
     private userId;
-    constructor(userId: number, event: any, payload: any);
+    constructor(id: number, event: any, payload: any);
 }
 export declare class WebsocketNotifyAllMessage extends MessageId {
     private event;
