@@ -37,7 +37,7 @@ export class WebsocketNotifyAllMessage extends MessageId {
 export class WebsocketNotifyUserTopic extends Topic {
   messageType: WebsocketNotifyUserMessage;
 
-  exchange = ExchangeHolding.fileManagerExchange;
+  exchange = ExchangeHolding.socketManagerExchange;
   exchangeType = ExchangeType.Topic;
   queue = 'WebsocketNotifyUser-queue';
   routingKey = 'WebsocketNotifyUser-key';
@@ -47,7 +47,7 @@ export class WebsocketNotifyUserTopic extends Topic {
 export class WebsocketNotifyAllTopic extends Topic {
   messageType: WebsocketNotifyAllMessage;
 
-  exchange = ExchangeHolding.fileManagerExchange;
+  exchange = ExchangeHolding.socketManagerExchange;
   exchangeType = ExchangeType.Topic;
   queue = 'WebsocketNotifyAllTopic-queue';
   routingKey = 'WebsocketNotifyAllTopic-key';

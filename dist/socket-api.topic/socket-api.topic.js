@@ -35,7 +35,7 @@ class WebsocketNotifyAllMessage extends Messages_1.MessageId {
 exports.WebsocketNotifyAllMessage = WebsocketNotifyAllMessage;
 class WebsocketNotifyUserTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.fileManagerExchange;
+    exchange = providers_1.ExchangeHolding.socketManagerExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'WebsocketNotifyUser-queue';
     routingKey = 'WebsocketNotifyUser-key';
@@ -43,7 +43,7 @@ class WebsocketNotifyUserTopic extends abstract_topic_1.Topic {
 exports.WebsocketNotifyUserTopic = WebsocketNotifyUserTopic;
 class WebsocketNotifyAllTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.fileManagerExchange;
+    exchange = providers_1.ExchangeHolding.socketManagerExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'WebsocketNotifyAllTopic-queue';
     routingKey = 'WebsocketNotifyAllTopic-key';
