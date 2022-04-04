@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebsocketNotifyAllTopic = exports.WebsocketNotifyUserTopic = exports.WebsocketNotifyAllMessage = exports.WebsocketNotifyUserMessage = exports.sendSocketData = void 0;
+exports.WebsocketNotifyAllTopic = exports.WebsocketNotifyUserTopic = exports.WebsocketNotifyAllMessage = exports.sendSocketData = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -11,30 +11,29 @@ class sendSocketData extends Messages_1.MessageId {
     }
 }
 exports.sendSocketData = sendSocketData;
-class WebsocketNotifyUserMessage extends Messages_1.MessageId {
-    event;
-    payload;
-    userId;
-    constructor(id, event, payload) {
-        super(id);
-        this.userId = id;
-        this.event = event;
-        this.payload = payload;
-    }
-}
-exports.WebsocketNotifyUserMessage = WebsocketNotifyUserMessage;
 class WebsocketNotifyAllMessage extends Messages_1.MessageId {
     event;
     payload;
     userId;
     constructor(userId, event, payload) {
         super(userId);
+        this.id = userId;
         this.event = event;
         this.payload = payload;
-        this.userId = userId;
     }
 }
 exports.WebsocketNotifyAllMessage = WebsocketNotifyAllMessage;
+class WebsocketNotifyUserMessage extends Messages_1.MessageId {
+    event;
+    payload;
+    userId;
+    constructor(userId, event, payload) {
+        super(userId);
+        this.id = userId;
+        this.event = event;
+        this.payload = payload;
+    }
+}
 class WebsocketNotifyUserTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.socketManagerExchange;
