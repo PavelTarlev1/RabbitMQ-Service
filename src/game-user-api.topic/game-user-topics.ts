@@ -73,7 +73,7 @@ export class SendUserDto extends MessageGameInfo {
 export class DeleteUserTopic extends Topic {
     messageType: DeleteUserDto;
 
-    exchange = ExchangeHolding.gameUserApiExchange;
+    exchange = ExchangeHolding.authApiExchange;
     exchangeType = ExchangeType.Topic;
     queue = 'deleteGameUserInfo-queue';
     routingKey = 'deleteGameUserInfo-key';
@@ -92,7 +92,7 @@ export class DeleteUserDto extends MessageId {
 export class ErrorUserTopic extends Topic {
     messageType: ErrorUserDto;
 
-    exchange = ExchangeHolding.gameUserApiExchange;
+    exchange = ExchangeHolding.authApiExchange;
     exchangeType = ExchangeType.Topic;
     queue = 'RetriveErrorGameUserInfo-queue';
     routingKey = 'RetriveErrorGameUserInfo-key';

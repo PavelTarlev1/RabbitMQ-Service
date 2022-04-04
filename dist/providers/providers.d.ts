@@ -1,4 +1,5 @@
 export declare class ExchangeHolding {
+    static authApiExchange: string;
     static gameUserApiExchange: string;
     static fileManagerExchange: string;
     static socketManagerExchange: string;

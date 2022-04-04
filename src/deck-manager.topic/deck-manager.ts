@@ -20,3 +20,20 @@ export class SendDeckTopic extends Topic {
   queue = 'SendDeckTopic-queue';
   routingKey = 'SendDeckTopic-key';
 }
+
+export class ErrorDeckMessage extends MessageId{
+  public userId: number;
+  constructor(userId: number) {
+    super(userId);
+    this.userId = userId;
+  }
+}
+
+export class ErrorDeckTopic extends Topic {
+  messageType: SendDeckMessage;
+
+  exchange = ExchangeHolding.fileManagerExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'SendDeckTopic-queue';
+  routingKey = 'SendDeckTopic-key';
+}

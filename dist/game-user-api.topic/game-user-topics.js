@@ -66,7 +66,7 @@ exports.SendUserDto = SendUserDto;
 // deleteUser --- >
 class DeleteUserTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.gameUserApiExchange;
+    exchange = providers_1.ExchangeHolding.authApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'deleteGameUserInfo-queue';
     routingKey = 'deleteGameUserInfo-key';
@@ -82,7 +82,7 @@ class DeleteUserDto extends Messages_1.MessageId {
 exports.DeleteUserDto = DeleteUserDto;
 class ErrorUserTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.gameUserApiExchange;
+    exchange = providers_1.ExchangeHolding.authApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'RetriveErrorGameUserInfo-queue';
     routingKey = 'RetriveErrorGameUserInfo-key';

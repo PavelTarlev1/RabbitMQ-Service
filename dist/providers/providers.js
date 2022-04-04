@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExchangeType = exports.ExchangeHolding = void 0;
 class ExchangeHolding {
-    static gameUserApiExchange = 'exchange1';
-    static fileManagerExchange = 'exchange2';
-    static socketManagerExchange = 'exchange4';
+    static authApiExchange = 'AuthApi-Exchange';
+    static gameUserApiExchange = 'GameUserApi-Exchange';
+    static fileManagerExchange = 'FileApi-Exchange';
+    static socketManagerExchange = 'SocketApi-Exchange';
 }
 exports.ExchangeHolding = ExchangeHolding;
 var ExchangeType;
