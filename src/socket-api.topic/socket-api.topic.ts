@@ -13,9 +13,10 @@ export class sendSocketData extends MessageId {
 export class WebsocketNotifyUserMessage extends MessageId {
   private event: any;
   private payload: any;
+  private userId: number;
   constructor(userId:number, event: any , payload:any) {
     super(userId);
-    this.id = userId;
+    this.userId = userId;
     this.event = event;
     this.payload = payload;
   }
@@ -25,11 +26,12 @@ export class WebsocketNotifyUserMessage extends MessageId {
 export class WebsocketNotifyAllMessage extends MessageId {
   private event: any;
   private payload: any;
+  private userId: number;
   constructor(userId:number, event: any , payload:any) {
     super(userId);
     this.event = event;
     this.payload = payload;
-    this.id = userId;
+    this.userId = userId;
     }
 }
 
