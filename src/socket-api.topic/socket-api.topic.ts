@@ -23,7 +23,7 @@ export class WebsocketNotifyAllMessage extends MessageId {
   }
 }
 
-class WebsocketNotifyUserMessage  extends MessageId{
+export class WebsocketNotifyUserMessage  extends MessageId{
   private event: string;
   public payload: any;
   public userId: number;

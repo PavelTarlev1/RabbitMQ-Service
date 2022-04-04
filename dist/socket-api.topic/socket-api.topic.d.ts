@@ -10,7 +10,7 @@ export declare class WebsocketNotifyAllMessage extends MessageId {
     userId: number;
     constructor(userId: number, event: string, payload: any);
 }
-declare class WebsocketNotifyUserMessage extends MessageId {
+export declare class WebsocketNotifyUserMessage extends MessageId {
     private event;
     payload: any;
     userId: number;
@@ -30,5 +30,4 @@ export declare class WebsocketNotifyAllTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export {};
 //# sourceMappingURL=socket-api.topic.d.ts.map
