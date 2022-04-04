@@ -1,7 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
 import { MessageId } from "../abstract.messages/Messages";
-import { FileSendMessage } from "../file-manager.topic/file-manager.topic";
 export declare class sendSocketData extends MessageId {
     constructor(id: number);
 }
@@ -16,14 +15,14 @@ export declare class WebsocketNotifyAllMessage extends MessageId {
     constructor(id: number, event: any, payload: any);
 }
 export declare class WebsocketNotifyUserTopic extends Topic {
-    messageType: FileSendMessage;
+    messageType: WebsocketNotifyUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
 export declare class WebsocketNotifyAllTopic extends Topic {
-    messageType: FileSendMessage;
+    messageType: WebsocketNotifyAllMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
