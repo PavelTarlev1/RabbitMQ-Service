@@ -1,7 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId, Messages } from "../abstract.messages/Messages";
-import { FileSendMessage } from "../file-manager.topic/file-manager.topic";
 
 export class sendSocketData extends MessageId {
   constructor(id:number) {
@@ -14,9 +13,9 @@ export class sendSocketData extends MessageId {
 export class WebsocketNotifyUserMessage extends MessageId {
   private event: any;
   private payload: any;
-  constructor(id:number, event: any , payload:any) {
-    super(id);
-    this.id = id;
+  constructor(userId:number, event: any , payload:any) {
+    super(userId);
+    this.id = userId;
     this.event = event;
     this.payload = payload;
   }
@@ -26,11 +25,11 @@ export class WebsocketNotifyUserMessage extends MessageId {
 export class WebsocketNotifyAllMessage extends MessageId {
   private event: any;
   private payload: any;
-  constructor(id:number, event: any , payload:any) {
-    super(id);
+  constructor(userId:number, event: any , payload:any) {
+    super(userId);
     this.event = event;
     this.payload = payload;
-    this.id = id;
+    this.id = userId;
     }
 }
 

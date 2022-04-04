@@ -14,9 +14,9 @@ exports.sendSocketData = sendSocketData;
 class WebsocketNotifyUserMessage extends Messages_1.MessageId {
     event;
     payload;
-    constructor(id, event, payload) {
-        super(id);
-        this.id = id;
+    constructor(userId, event, payload) {
+        super(userId);
+        this.id = userId;
         this.event = event;
         this.payload = payload;
     }
@@ -25,11 +25,11 @@ exports.WebsocketNotifyUserMessage = WebsocketNotifyUserMessage;
 class WebsocketNotifyAllMessage extends Messages_1.MessageId {
     event;
     payload;
-    constructor(id, event, payload) {
-        super(id);
+    constructor(userId, event, payload) {
+        super(userId);
         this.event = event;
         this.payload = payload;
-        this.id = id;
+        this.id = userId;
     }
 }
 exports.WebsocketNotifyAllMessage = WebsocketNotifyAllMessage;

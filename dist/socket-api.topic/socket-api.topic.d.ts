@@ -7,12 +7,12 @@ export declare class sendSocketData extends MessageId {
 export declare class WebsocketNotifyUserMessage extends MessageId {
     private event;
     private payload;
-    constructor(id: number, event: any, payload: any);
+    constructor(userId: number, event: any, payload: any);
 }
 export declare class WebsocketNotifyAllMessage extends MessageId {
     private event;
     private payload;
-    constructor(id: number, event: any, payload: any);
+    constructor(userId: number, event: any, payload: any);
 }
 export declare class WebsocketNotifyUserTopic extends Topic {
     messageType: WebsocketNotifyUserMessage;
