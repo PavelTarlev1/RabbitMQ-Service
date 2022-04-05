@@ -1,23 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebsocketNotifyAllTopic = exports.WebsocketNotifyUserTopic = exports.WebsocketNotifyUserMessage = exports.WebsocketNotifyAllMessage = exports.sendSocketData = void 0;
+exports.WebsocketNotifyAllTopic = exports.WebsocketNotifyUserTopic = exports.WebsocketNotifyUserMessage = exports.WebsocketNotifyAllMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
-class sendSocketData extends Messages_1.MessageId {
-    constructor(id) {
-        super(id);
-        this.id = id;
-    }
-}
-exports.sendSocketData = sendSocketData;
 class WebsocketNotifyAllMessage extends Messages_1.MessageId {
     event;
     payload;
     userId;
     constructor(userId, event, payload) {
         super(userId);
-        this.id = userId;
+        this.userId = userId;
         this.event = event;
         this.payload = payload;
     }
@@ -29,7 +22,7 @@ class WebsocketNotifyUserMessage extends Messages_1.MessageId {
     userId;
     constructor(userId, event, payload) {
         super(userId);
-        this.id = userId;
+        this.userId = userId;
         this.event = event;
         this.payload = payload;
     }

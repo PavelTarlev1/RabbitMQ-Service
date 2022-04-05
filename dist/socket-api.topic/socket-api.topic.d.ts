@@ -1,9 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
 import { MessageId } from "../abstract.messages/Messages";
-export declare class sendSocketData extends MessageId {
-    constructor(id: number);
-}
 export declare class WebsocketNotifyAllMessage extends MessageId {
     private event;
     payload: any;

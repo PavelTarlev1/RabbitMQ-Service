@@ -54,10 +54,24 @@ export class DeleteFileTopic extends Topic {
     routingKey = 'DeleteFile-queue-key';
 }
 
-export class ErrorFileTopic extends Topic {
-    messageType: DeleteFileMessage;
 
-    exchange = ExchangeHolding.authApiExchange;
+export class ErrorFileMessage extends MessageId {
+    private event: string;
+    public payload: any;
+    public userId: number;
+
+    constructor(userId: number, event: string, payload: any) {
+        super(userId);
+        this.userId = userId;
+        this.event = event;
+        this.payload = payload;
+    }
+}
+
+export class ErrorFileTopic extends Topic {
+    messageType: ErrorFileMessage;
+
+    exchange = ExchangeHolding.socketManagerExchange;
     exchangeType = ExchangeType.Topic;
     queue = 'ErrorFile-queue';
     routingKey = 'ErrorFIle-queue-key';

@@ -12,10 +12,10 @@ class SendDeckMessage extends Messages_1.MessageId {
     }
 }
 exports.SendDeckMessage = SendDeckMessage;
-// <--- Auth
+// Auth ---> 
 class SendDeckTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.fileManagerExchange;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'SendDeckTopic-queue';
     routingKey = 'SendDeckTopic-key';
@@ -29,9 +29,10 @@ class ErrorDeckMessage extends Messages_1.MessageId {
     }
 }
 exports.ErrorDeckMessage = ErrorDeckMessage;
+// <--- Auth
 class ErrorDeckTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.fileManagerExchange;
+    exchange = providers_1.ExchangeHolding.authApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'SendDeckTopic-queue';
     routingKey = 'SendDeckTopic-key';

@@ -4,6 +4,7 @@ exports.ExchangeType = exports.ExchangeHolding = void 0;
 class ExchangeHolding {
     static authApiExchange = 'AuthApi-Exchange';
     static gameUserApiExchange = 'GameUserApi-Exchange';
+    static deckUserApiExchange = 'DeckUserApi-Exchange';
     static fileManagerExchange = 'FileApi-Exchange';
     static socketManagerExchange = 'SocketApi-Exchange';
 }

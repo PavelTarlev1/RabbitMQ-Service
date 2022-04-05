@@ -34,8 +34,14 @@ export declare class DeleteFileTopic extends Topic {
     queue: string;
     routingKey: string;
 }
+export declare class ErrorFileMessage extends MessageId {
+    private event;
+    payload: any;
+    userId: number;
+    constructor(userId: number, event: string, payload: any);
+}
 export declare class ErrorFileTopic extends Topic {
-    messageType: DeleteFileMessage;
+    messageType: ErrorFileMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;

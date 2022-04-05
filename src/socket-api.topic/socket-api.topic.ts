@@ -2,14 +2,6 @@ import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId } from "../abstract.messages/Messages";
 
-export class sendSocketData extends MessageId {
-  constructor(id: number) {
-    super(id);
-    this.id = id;
-  }
-}
-
-
 export class WebsocketNotifyAllMessage extends MessageId {
   private event: string;
   public payload: any;
@@ -17,7 +9,7 @@ export class WebsocketNotifyAllMessage extends MessageId {
 
   constructor(userId: number, event: string, payload: any) {
     super(userId);
-    this.id = userId;
+    this.userId = userId;
     this.event = event;
     this.payload = payload;
   }
@@ -30,7 +22,7 @@ export class WebsocketNotifyUserMessage  extends MessageId{
 
   constructor(userId: number, event: string, payload: any) {
     super(userId);
-    this.id = userId;
+    this.userId = userId;
     this.event = event;
     this.payload = payload;
   }

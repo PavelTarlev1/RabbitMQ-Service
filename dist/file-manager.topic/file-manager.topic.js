@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorFileTopic = exports.DeleteFileTopic = exports.DeleteFileMessage = exports.ResponseFileTopic = exports.ResponseSuccessMessage = exports.SendFileTopic = exports.FileSendMessage = void 0;
+exports.ErrorFileTopic = exports.ErrorFileMessage = exports.DeleteFileTopic = exports.DeleteFileMessage = exports.ResponseFileTopic = exports.ResponseSuccessMessage = exports.SendFileTopic = exports.FileSendMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -52,9 +52,21 @@ class DeleteFileTopic extends abstract_topic_1.Topic {
     routingKey = 'DeleteFile-queue-key';
 }
 exports.DeleteFileTopic = DeleteFileTopic;
+class ErrorFileMessage extends Messages_1.MessageId {
+    event;
+    payload;
+    userId;
+    constructor(userId, event, payload) {
+        super(userId);
+        this.userId = userId;
+        this.event = event;
+        this.payload = payload;
+    }
+}
+exports.ErrorFileMessage = ErrorFileMessage;
 class ErrorFileTopic extends abstract_topic_1.Topic {
     messageType;
-    exchange = providers_1.ExchangeHolding.authApiExchange;
+    exchange = providers_1.ExchangeHolding.socketManagerExchange;
     exchangeType = providers_1.ExchangeType.Topic;
     queue = 'ErrorFile-queue';
     routingKey = 'ErrorFIle-queue-key';
