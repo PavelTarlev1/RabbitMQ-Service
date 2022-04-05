@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorDeckTopic = exports.ErrorDeckMessage = exports.SendDeckTopic = exports.SendDeckMessage = void 0;
+exports.ErrorDeckMessage = exports.ErrorDeckTopic = exports.SendDeckTopic = exports.SendDeckMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -21,14 +21,6 @@ class SendDeckTopic extends abstract_topic_1.Topic {
     routingKey = 'SendDeckTopic-key';
 }
 exports.SendDeckTopic = SendDeckTopic;
-class ErrorDeckMessage extends Messages_1.MessageId {
-    userId;
-    constructor(userId) {
-        super(userId);
-        this.userId = userId;
-    }
-}
-exports.ErrorDeckMessage = ErrorDeckMessage;
 // <--- Auth
 class ErrorDeckTopic extends abstract_topic_1.Topic {
     messageType;
@@ -38,4 +30,12 @@ class ErrorDeckTopic extends abstract_topic_1.Topic {
     routingKey = 'SendDeckTopic-key';
 }
 exports.ErrorDeckTopic = ErrorDeckTopic;
+class ErrorDeckMessage extends Messages_1.MessageId {
+    userId;
+    constructor(userId) {
+        super(userId);
+        this.userId = userId;
+    }
+}
+exports.ErrorDeckMessage = ErrorDeckMessage;
 //# sourceMappingURL=deck-manager.js.map

@@ -21,14 +21,6 @@ export class SendDeckTopic extends Topic {
   routingKey = 'SendDeckTopic-key';
 }
 
-export class ErrorDeckMessage extends MessageId{
-  public userId: number;
-  constructor(userId: number) {
-    super(userId);
-    this.userId = userId;
-  }
-}
-
 // <--- Auth
 export class ErrorDeckTopic extends Topic {
   messageType: ErrorDeckMessage;
@@ -37,4 +29,12 @@ export class ErrorDeckTopic extends Topic {
   exchangeType = ExchangeType.Topic;
   queue = 'SendDeckTopic-queue';
   routingKey = 'SendDeckTopic-key';
+}
+
+export class ErrorDeckMessage extends MessageId{
+  public userId: number;
+  constructor(userId: number) {
+    super(userId);
+    this.userId = userId;
+  }
 }
