@@ -11,7 +11,7 @@ export class SendDeckMessage extends MessageId {
   }
 }
 
-// Auth ---> 
+// Auth --->
 export class SendDeckTopic extends Topic {
   messageType: SendDeckMessage;
 
@@ -31,7 +31,7 @@ export class ErrorDeckMessage extends MessageId{
 
 // <--- Auth
 export class ErrorDeckTopic extends Topic {
-  messageType: SendDeckMessage;
+  messageType: ErrorDeckMessage;
 
   exchange = ExchangeHolding.authApiExchange;
   exchangeType = ExchangeType.Topic;

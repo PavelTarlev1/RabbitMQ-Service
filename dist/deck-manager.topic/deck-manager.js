@@ -12,7 +12,7 @@ class SendDeckMessage extends Messages_1.MessageId {
     }
 }
 exports.SendDeckMessage = SendDeckMessage;
-// Auth ---> 
+// Auth --->
 class SendDeckTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.deckUserApiExchange;

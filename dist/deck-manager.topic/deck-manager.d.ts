@@ -17,7 +17,7 @@ export declare class ErrorDeckMessage extends MessageId {
     constructor(userId: number);
 }
 export declare class ErrorDeckTopic extends Topic {
-    messageType: SendDeckMessage;
+    messageType: ErrorDeckMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
