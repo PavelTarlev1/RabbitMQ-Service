@@ -38,7 +38,6 @@
     "pb-util": "^1.0.3",
     "promise-breaker": "^5.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.5.4",
     "tsc": "^2.0.4"
   }
 }
