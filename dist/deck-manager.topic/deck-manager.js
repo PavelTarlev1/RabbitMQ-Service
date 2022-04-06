@@ -31,10 +31,9 @@ class ErrorDeckTopic extends abstract_topic_1.Topic {
 }
 exports.ErrorDeckTopic = ErrorDeckTopic;
 class ErrorDeckMessage extends Messages_1.MessageId {
-    userId;
-    constructor(userId) {
-        super(userId);
-        this.userId = userId;
+    constructor(id) {
+        super(id);
+        this.id = id;
     }
 }
 exports.ErrorDeckMessage = ErrorDeckMessage;

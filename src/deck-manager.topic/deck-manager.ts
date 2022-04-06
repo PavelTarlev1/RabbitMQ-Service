@@ -33,10 +33,9 @@ export class ErrorDeckTopic extends Topic {
 }
 
 export class ErrorDeckMessage extends MessageId {
-  public userId: number;
 
-  constructor(userId: number) {
-    super(userId);
-    this.userId = userId;
+  constructor(id: number) {
+    super(id);
+    this.id = id;
   }
 }

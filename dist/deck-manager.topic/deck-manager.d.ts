@@ -20,7 +20,6 @@ export declare class ErrorDeckTopic extends Topic {
     routingKey: string;
 }
 export declare class ErrorDeckMessage extends MessageId {
-    userId: number;
-    constructor(userId: number);
+    constructor(id: number);
 }
 //# sourceMappingURL=deck-manager.d.ts.map
