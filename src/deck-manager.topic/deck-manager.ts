@@ -1,8 +1,6 @@
-import {Topic} from "../abstract.topic";
-import {ExchangeHolding, ExchangeType} from "../providers/providers";
-import {MessageId} from "../abstract.messages/Messages";
-
-
+import { Topic } from "../abstract.topic";
+import { ExchangeHolding, ExchangeType } from "../providers/providers";
+import { MessageId } from "../abstract.messages/Messages";
 
 
 // Auth --->
@@ -17,6 +15,7 @@ export class SendDeckTopic extends Topic {
 
 export class SendDeckMessage extends MessageId {
   public userId: number;
+
   constructor(userId: number) {
     super(userId);
     this.userId = userId;
@@ -33,8 +32,9 @@ export class ErrorDeckTopic extends Topic {
   routingKey = 'ErrorDeckTopic-key';
 }
 
-export class ErrorDeckMessage extends MessageId{
+export class ErrorDeckMessage extends MessageId {
   public userId: number;
+
   constructor(userId: number) {
     super(userId);
     this.userId = userId;
