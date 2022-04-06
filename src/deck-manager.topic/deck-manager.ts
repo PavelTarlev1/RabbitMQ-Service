@@ -29,8 +29,8 @@ export class ErrorDeckTopic extends Topic {
 
   exchange = ExchangeHolding.authApiExchange;
   exchangeType = ExchangeType.Topic;
-  queue = 'SendDeckTopic-queue';
-  routingKey = 'SendDeckTopic-key';
+  queue = 'ErrorDeckTopic-queue';
+  routingKey = 'ErrorDeckTopic-key';
 }
 
 export class ErrorDeckMessage extends MessageId{

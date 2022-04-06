@@ -26,8 +26,8 @@ class ErrorDeckTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.authApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
-    queue = 'SendDeckTopic-queue';
-    routingKey = 'SendDeckTopic-key';
+    queue = 'ErrorDeckTopic-queue';
+    routingKey = 'ErrorDeckTopic-key';
 }
 exports.ErrorDeckTopic = ErrorDeckTopic;
 class ErrorDeckMessage extends Messages_1.MessageId {
