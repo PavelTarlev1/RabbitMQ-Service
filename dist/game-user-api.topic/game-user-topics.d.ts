@@ -51,7 +51,6 @@ export declare class ErrorUserTopic extends Topic {
     routingKey: string;
 }
 export declare class ErrorUserMessage extends MessageId {
-    userId: number;
-    constructor(userId: number);
+    constructor(id: number);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map

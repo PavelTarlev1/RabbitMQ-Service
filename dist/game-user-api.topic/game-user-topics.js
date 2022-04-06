@@ -80,20 +80,20 @@ class DeleteUserMessage extends Messages_1.MessageId {
     }
 }
 exports.DeleteUserMessage = DeleteUserMessage;
+// Auth <---
 class ErrorUserTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.authApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
-    queue = 'RetriveErrorGameUserInfo-queue';
-    routingKey = 'RetriveErrorGameUserInfo-key';
+    queue = 'ErrorGameUserInfo-queue';
+    routingKey = 'ErrorGameUserInfo-key';
 }
 exports.ErrorUserTopic = ErrorUserTopic;
 // errorGameUserDto <---
 class ErrorUserMessage extends Messages_1.MessageId {
-    userId;
-    constructor(userId) {
-        super(userId);
-        this.userId = userId;
+    constructor(id) {
+        super(id);
+        this.id = id;
     }
 }
 exports.ErrorUserMessage = ErrorUserMessage;

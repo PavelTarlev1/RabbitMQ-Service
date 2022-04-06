@@ -88,21 +88,20 @@ export class DeleteUserMessage extends MessageId {
     }
 }
 
-
+// Auth <---
 export class ErrorUserTopic extends Topic {
     messageType: ErrorUserMessage;
 
     exchange = ExchangeHolding.authApiExchange;
     exchangeType = ExchangeType.Topic;
-    queue = 'RetriveErrorGameUserInfo-queue';
-    routingKey = 'RetriveErrorGameUserInfo-key';
+    queue = 'ErrorGameUserInfo-queue';
+    routingKey = 'ErrorGameUserInfo-key';
 
 }
 // errorGameUserDto <---
 export class ErrorUserMessage extends MessageId {
-    public userId: number;
-    constructor(userId: number) {
-        super(userId);
-        this.userId = userId;
+    constructor(id: number) {
+        super(id);
+        this.id = id;
     }
 }
