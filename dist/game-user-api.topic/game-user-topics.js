@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -97,4 +97,21 @@ class ErrorUserMessage extends Messages_1.MessageId {
     }
 }
 exports.ErrorUserMessage = ErrorUserMessage;
+class ExpUserMessage extends Messages_1.MessageId {
+    exp;
+    constructor(id, exp) {
+        super(id);
+        this.id = id;
+        this.exp = exp;
+    }
+}
+exports.ExpUserMessage = ExpUserMessage;
+class ExperianceTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.gameUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'ExpAddUserInfo-queue';
+    routingKey = 'ExpAddUserInfo-key';
+}
+exports.ExperianceTopic = ExperianceTopic;
 //# sourceMappingURL=game-user-topics.js.map

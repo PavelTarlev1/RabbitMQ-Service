@@ -105,3 +105,24 @@ export class ErrorUserMessage extends MessageId {
         this.id = id;
     }
 }
+
+
+
+export class ExpUserMessage extends MessageId {
+    public exp: number;
+    constructor(id: number, exp: number) {
+        super(id);
+        this.id = id;
+        this.exp = exp;
+    }
+}
+
+export class ExperianceTopic extends Topic {
+    messageType: ExpUserMessage;
+
+    exchange = ExchangeHolding.gameUserApiExchange;
+    exchangeType = ExchangeType.Topic;
+    queue = 'ExpAddUserInfo-queue';
+    routingKey = 'ExpAddUserInfo-key';
+
+}

@@ -53,4 +53,15 @@ export declare class ErrorUserTopic extends Topic {
 export declare class ErrorUserMessage extends MessageId {
     constructor(id: number);
 }
+export declare class ExpUserMessage extends MessageId {
+    exp: number;
+    constructor(id: number, exp: number);
+}
+export declare class ExperianceTopic extends Topic {
+    messageType: ExpUserMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
 //# sourceMappingURL=game-user-topics.d.ts.map
