@@ -11,7 +11,7 @@ export declare class SendDeckAuctionGenTopic extends Topic {
 export declare class SendDeckAuctionGenMessage extends Messages {
 }
 export declare class SendDeckAuctionTopic extends Topic {
-    messageType: SendDeckAuctionGenMessage;
+    messageType: SendDeckAuctionMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;

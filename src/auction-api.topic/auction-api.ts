@@ -18,7 +18,7 @@ export class SendDeckAuctionGenMessage extends Messages {
 }
 
 export class SendDeckAuctionTopic extends Topic{
-  messageType: SendDeckAuctionGenMessage;
+  messageType: SendDeckAuctionMessage;
 
   exchange = ExchangeHolding.auctionApiExchange;
   exchangeType = ExchangeType.Topic;
