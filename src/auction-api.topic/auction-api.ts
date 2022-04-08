@@ -17,3 +17,21 @@ export class SendDeckAuctionGenMessage extends Messages {
 
 }
 
+export class SendDeckAuctionTopic extends Topic{
+  messageType: SendDeckAuctionGenMessage;
+
+  exchange = ExchangeHolding.auctionApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'SendDeckAuction-queue';
+  routingKey = 'SendDeckAuction-key';
+}
+
+export class SendDeckAuctionMessage extends Messages {
+  public arr: [];
+  constructor(arr:[]) {
+    super();
+    this.arr = arr;
+  }
+}
+
+

@@ -10,4 +10,15 @@ export declare class SendDeckAuctionGenTopic extends Topic {
 }
 export declare class SendDeckAuctionGenMessage extends Messages {
 }
+export declare class SendDeckAuctionTopic extends Topic {
+    messageType: SendDeckAuctionGenMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class SendDeckAuctionMessage extends Messages {
+    arr: [];
+    constructor(arr: []);
+}
 //# sourceMappingURL=auction-api.d.ts.map

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -16,4 +16,20 @@ exports.SendDeckAuctionGenTopic = SendDeckAuctionGenTopic;
 class SendDeckAuctionGenMessage extends Messages_1.Messages {
 }
 exports.SendDeckAuctionGenMessage = SendDeckAuctionGenMessage;
+class SendDeckAuctionTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.auctionApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'SendDeckAuction-queue';
+    routingKey = 'SendDeckAuction-key';
+}
+exports.SendDeckAuctionTopic = SendDeckAuctionTopic;
+class SendDeckAuctionMessage extends Messages_1.Messages {
+    arr;
+    constructor(arr) {
+        super();
+        this.arr = arr;
+    }
+}
+exports.SendDeckAuctionMessage = SendDeckAuctionMessage;
 //# sourceMappingURL=auction-api.js.map
