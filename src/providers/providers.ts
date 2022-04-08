@@ -4,6 +4,7 @@ export class ExchangeHolding {
   public static deckUserApiExchange = 'DeckUserApi-Exchange';
   public static fileManagerExchange = 'FileApi-Exchange';
   public static socketManagerExchange = 'SocketApi-Exchange';
+  public static auctionApiExchange = 'AuctionApi-Exchange';
 }
 
 export enum ExchangeType {

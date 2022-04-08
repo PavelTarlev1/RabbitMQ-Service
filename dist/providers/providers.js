@@ -7,6 +7,7 @@ class ExchangeHolding {
     static deckUserApiExchange = 'DeckUserApi-Exchange';
     static fileManagerExchange = 'FileApi-Exchange';
     static socketManagerExchange = 'SocketApi-Exchange';
+    static auctionApiExchange = 'AuctionApi-Exchange';
 }
 exports.ExchangeHolding = ExchangeHolding;
 var ExchangeType;

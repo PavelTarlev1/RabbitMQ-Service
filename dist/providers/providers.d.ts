@@ -4,6 +4,7 @@ export declare class ExchangeHolding {
     static deckUserApiExchange: string;
     static fileManagerExchange: string;
     static socketManagerExchange: string;
+    static auctionApiExchange: string;
 }
 export declare enum ExchangeType {
     Topic = "topic",
