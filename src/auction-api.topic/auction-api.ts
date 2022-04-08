@@ -27,8 +27,8 @@ export class SendDeckAuctionTopic extends Topic{
 }
 
 export class SendDeckAuctionMessage extends Messages {
-  public arr: [];
-  constructor(arr:[]) {
+  public arr: number[];
+  constructor(arr:number[]) {
     super();
     this.arr = arr;
   }

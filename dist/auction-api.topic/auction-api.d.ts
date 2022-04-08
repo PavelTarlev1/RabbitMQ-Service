@@ -18,7 +18,7 @@ export declare class SendDeckAuctionTopic extends Topic {
     routingKey: string;
 }
 export declare class SendDeckAuctionMessage extends Messages {
-    arr: [];
-    constructor(arr: []);
+    arr: number[];
+    constructor(arr: number[]);
 }
 //# sourceMappingURL=auction-api.d.ts.map
