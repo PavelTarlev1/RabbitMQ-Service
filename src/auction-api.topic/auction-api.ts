@@ -53,3 +53,50 @@ export class BuyCardsRbMessage extends MessageId {
 
   }
 }
+
+
+
+
+
+export class CheckGoldTopic extends Topic {
+  messageType: CheckGoldMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'CheckGoldTopic-queue';
+  routingKey = 'CheckGoldTopic-key';
+
+
+}
+
+export class CheckGoldMessage extends MessageId {
+  private gold: number;
+
+  constructor(id:number,gold:number) {
+    super(id);
+    this.id =id;
+    this.gold = gold;
+  }
+}
+
+
+
+
+export class CheckCreditTopic extends Topic {
+  messageType: CheckCreditsMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'CheckCreditTopic-queue';
+  routingKey = 'CheckCreditTopicc-key';
+}
+
+export class CheckCreditsMessage extends MessageId {
+  private credits: number;
+
+  constructor(id:number,credits:number) {
+    super(id);
+    this.id =id;
+    this.credits = credits;
+  }
+}

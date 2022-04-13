@@ -46,5 +46,3 @@ export class WebsocketNotifyAllTopic extends Topic {
   queue = 'WebsocketNotifyAllTopic-queue';
   routingKey = 'WebsocketNotifyAllTopic-key';
 }
-
-
