@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -32,4 +32,19 @@ class SendDeckAuctionMessage extends Messages_1.Messages {
     }
 }
 exports.SendDeckAuctionMessage = SendDeckAuctionMessage;
+class BuyCardsTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'BuyCardsTopic-queue';
+    routingKey = 'BuyCardsTopic-key';
+}
+exports.BuyCardsTopic = BuyCardsTopic;
+class BuyCardsRbMessage extends Messages_1.MessageId {
+    constructor(id) {
+        super(id);
+        this.id = id;
+    }
+}
+exports.BuyCardsRbMessage = BuyCardsRbMessage;
 //# sourceMappingURL=auction-api.js.map

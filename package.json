@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.2.0",
     "@types/core-js": "^2.5.5",
     "@types/node": "^14.18.12",
     "eslint": "^8.10.0",
