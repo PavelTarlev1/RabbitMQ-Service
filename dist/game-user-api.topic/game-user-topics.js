@@ -122,12 +122,13 @@ class BuyCardResponseTopic extends abstract_topic_1.Topic {
     routingKey = 'BuyCardResponseTopic-key';
 }
 exports.BuyCardResponseTopic = BuyCardResponseTopic;
-class BuyCardResponseMessage extends Messages_1.MessageId {
-    exp;
-    constructor(id, exp) {
-        super(id);
-        this.id = id;
-        this.exp = exp;
+class BuyCardResponseMessage extends Messages_1.Messages {
+    userId;
+    cardId;
+    constructor(userId, cardId) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
     }
 }
 exports.BuyCardResponseMessage = BuyCardResponseMessage;

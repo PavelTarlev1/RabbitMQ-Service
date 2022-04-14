@@ -1,6 +1,6 @@
 import { Topic} from "../abstract.topic";
 import { ExchangeHolding, ExchangeType} from "../providers/providers";
-import {MessageGameInfo, MessageId} from "../abstract.messages/Messages";
+import { MessageGameInfo, MessageId, Messages } from "../abstract.messages/Messages";
 
 
 
@@ -128,7 +128,7 @@ export class ExperianceTopic extends Topic {
 }
 
 export class BuyCardResponseTopic extends Topic {
-    messageType: ExpUserMessage;
+    messageType: BuyCardResponseMessage;
 
     exchange = ExchangeHolding.auctionApiExchange;
     exchangeType = ExchangeType.Topic;
@@ -136,11 +136,12 @@ export class BuyCardResponseTopic extends Topic {
     routingKey = 'BuyCardResponseTopic-key';
 
 }
-export class BuyCardResponseMessage extends MessageId {
-    public exp: number;
-    constructor(id: number, exp: number) {
-        super(id);
-        this.id = id;
-        this.exp = exp;
+export class BuyCardResponseMessage extends Messages {
+    private userId: number;
+    private cardId: number;
+    constructor(userId: number, cardId:number) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
     }
 }

@@ -1,6 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
-import { MessageGameInfo, MessageId } from "../abstract.messages/Messages";
+import { MessageGameInfo, MessageId, Messages } from "../abstract.messages/Messages";
 export declare class CreateUserMessage extends MessageGameInfo {
     constructor(id: number, username: string);
 }
@@ -65,14 +65,15 @@ export declare class ExperianceTopic extends Topic {
     routingKey: string;
 }
 export declare class BuyCardResponseTopic extends Topic {
-    messageType: ExpUserMessage;
+    messageType: BuyCardResponseMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class BuyCardResponseMessage extends MessageId {
-    exp: number;
-    constructor(id: number, exp: number);
+export declare class BuyCardResponseMessage extends Messages {
+    private userId;
+    private cardId;
+    constructor(userId: number, cardId: number);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map
