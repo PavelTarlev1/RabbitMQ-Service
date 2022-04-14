@@ -38,11 +38,12 @@ export declare class CheckGoldTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class CheckGoldMessage extends MessageId {
-    private gold;
-    private cardId;
-    private cost;
-    constructor(id: number, cardId: number, gold: number, cost: number);
+export declare class CheckGoldMessage extends Messages {
+    cardId: number;
+    goldGiving: number;
+    CardCost: number;
+    userId: number;
+    constructor(userId: number, cardId: number, goldGiving: number, CardCost: number);
 }
 export declare class CheckCreditTopic extends Topic {
     messageType: CheckCreditsMessage;

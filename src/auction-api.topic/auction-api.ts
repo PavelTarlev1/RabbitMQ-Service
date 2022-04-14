@@ -67,17 +67,19 @@ export class CheckGoldTopic extends Topic {
 
 }
 
-export class CheckGoldMessage extends MessageId {
-  private gold: number;
-  private cardId: number;
-  private cost: number;
+export class CheckGoldMessage extends Messages {
 
-  constructor(id: number, cardId: number, gold: number, cost:number) {
-    super(id);
+  public cardId: number;
+  public goldGiving: number;
+  public CardCost: number;
+  public userId: number;
+
+  constructor(userId: number, cardId: number, goldGiving: number, CardCost:number) {
+    super();
+    this.userId = userId;
     this.cardId = cardId;
-    this.id = id;
-    this.gold = gold;
-    this.cost = cost;
+    this.goldGiving = goldGiving;
+    this.CardCost = CardCost;
   }
 }
 

@@ -55,16 +55,17 @@ class CheckGoldTopic extends abstract_topic_1.Topic {
     routingKey = 'CheckGoldTopic-key';
 }
 exports.CheckGoldTopic = CheckGoldTopic;
-class CheckGoldMessage extends Messages_1.MessageId {
-    gold;
+class CheckGoldMessage extends Messages_1.Messages {
     cardId;
-    cost;
-    constructor(id, cardId, gold, cost) {
-        super(id);
+    goldGiving;
+    CardCost;
+    userId;
+    constructor(userId, cardId, goldGiving, CardCost) {
+        super();
+        this.userId = userId;
         this.cardId = cardId;
-        this.id = id;
-        this.gold = gold;
-        this.cost = cost;
+        this.goldGiving = goldGiving;
+        this.CardCost = CardCost;
     }
 }
 exports.CheckGoldMessage = CheckGoldMessage;
