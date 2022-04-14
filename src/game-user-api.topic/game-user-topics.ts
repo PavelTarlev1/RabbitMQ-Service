@@ -126,3 +126,21 @@ export class ExperianceTopic extends Topic {
     routingKey = 'ExpAddUserInfo-key';
 
 }
+
+export class BuyCardResponseTopic extends Topic {
+    messageType: ExpUserMessage;
+
+    exchange = ExchangeHolding.auctionApiExchange;
+    exchangeType = ExchangeType.Topic;
+    queue = 'BuyCardResponseTopic-queue';
+    routingKey = 'BuyCardResponseTopic-key';
+
+}
+export class BuyCardResponseMessage extends MessageId {
+    public exp: number;
+    constructor(id: number, exp: number) {
+        super(id);
+        this.id = id;
+        this.exp = exp;
+    }
+}

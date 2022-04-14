@@ -64,4 +64,15 @@ export declare class ExperianceTopic extends Topic {
     queue: string;
     routingKey: string;
 }
+export declare class BuyCardResponseTopic extends Topic {
+    messageType: ExpUserMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class BuyCardResponseMessage extends MessageId {
+    exp: number;
+    constructor(id: number, exp: number);
+}
 //# sourceMappingURL=game-user-topics.d.ts.map
