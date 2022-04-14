@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.deleteCardAuctionMessage = exports.deleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -89,4 +89,19 @@ class CheckCreditsMessage extends Messages_1.MessageId {
     }
 }
 exports.CheckCreditsMessage = CheckCreditsMessage;
+class deleteCardAuctionTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.gameUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'deleteCardAuctionTopic-queue';
+    routingKey = 'deleteCardAuctionTopic-key';
+}
+exports.deleteCardAuctionTopic = deleteCardAuctionTopic;
+class deleteCardAuctionMessage extends Messages_1.MessageId {
+    constructor(id) {
+        super(id);
+        this.id = id;
+    }
+}
+exports.deleteCardAuctionMessage = deleteCardAuctionMessage;
 //# sourceMappingURL=auction-api.js.map

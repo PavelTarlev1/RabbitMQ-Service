@@ -57,4 +57,14 @@ export declare class CheckCreditsMessage extends MessageId {
     private cost;
     constructor(id: number, cardId: number, gold: number, cost: number);
 }
+export declare class deleteCardAuctionTopic extends Topic {
+    messageType: CheckCreditsMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class deleteCardAuctionMessage extends MessageId {
+    constructor(id: number);
+}
 //# sourceMappingURL=auction-api.d.ts.map

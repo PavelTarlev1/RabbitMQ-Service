@@ -104,3 +104,20 @@ export class CheckCreditsMessage extends MessageId {
     this.cost = cost;
   }
 }
+
+export class deleteCardAuctionTopic extends Topic {
+  messageType: CheckCreditsMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'deleteCardAuctionTopic-queue';
+  routingKey = 'deleteCardAuctionTopic-key';
+}
+
+export class deleteCardAuctionMessage extends MessageId{
+  constructor(id: number) {
+    super(id);
+    this.id = id;
+  }
+
+}
