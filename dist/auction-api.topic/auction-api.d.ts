@@ -64,7 +64,8 @@ export declare class DeleteCardAuctionTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class DeleteCardAuctionMessage extends MessageId {
-    constructor(id: number);
+export declare class DeleteCardAuctionMessage extends Messages {
+    cardsID: number[];
+    constructor(cardsID: number[]);
 }
 //# sourceMappingURL=auction-api.d.ts.map

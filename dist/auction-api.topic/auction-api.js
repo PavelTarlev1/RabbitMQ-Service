@@ -97,10 +97,11 @@ class DeleteCardAuctionTopic extends abstract_topic_1.Topic {
     routingKey = 'deleteCardAuctionTopic-key';
 }
 exports.DeleteCardAuctionTopic = DeleteCardAuctionTopic;
-class DeleteCardAuctionMessage extends Messages_1.MessageId {
-    constructor(id) {
-        super(id);
-        this.id = id;
+class DeleteCardAuctionMessage extends Messages_1.Messages {
+    cardsID;
+    constructor(cardsID) {
+        super();
+        this.cardsID = cardsID;
     }
 }
 exports.DeleteCardAuctionMessage = DeleteCardAuctionMessage;

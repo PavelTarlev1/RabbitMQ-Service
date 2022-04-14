@@ -114,10 +114,10 @@ export class DeleteCardAuctionTopic extends Topic {
   routingKey = 'deleteCardAuctionTopic-key';
 }
 
-export class DeleteCardAuctionMessage extends MessageId{
-  constructor(id: number) {
-    super(id);
-    this.id = id;
+export class DeleteCardAuctionMessage extends Messages{
+  public cardsID: number[];
+  constructor(cardsID:number[]) {
+    super();
+    this.cardsID = cardsID;
   }
-
 }
