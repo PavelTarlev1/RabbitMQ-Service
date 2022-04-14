@@ -106,7 +106,7 @@ export class CheckCreditsMessage extends MessageId {
 }
 
 export class DeleteCardAuctionTopic extends Topic {
-  messageType: CheckCreditsMessage;
+  messageType: DeleteCardAuctionMessage;
 
   exchange = ExchangeHolding.gameUserApiExchange;
   exchangeType = ExchangeType.Topic;

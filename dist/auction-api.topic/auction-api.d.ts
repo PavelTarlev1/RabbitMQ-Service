@@ -58,7 +58,7 @@ export declare class CheckCreditsMessage extends MessageId {
     constructor(id: number, cardId: number, gold: number, cost: number);
 }
 export declare class DeleteCardAuctionTopic extends Topic {
-    messageType: CheckCreditsMessage;
+    messageType: DeleteCardAuctionMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
