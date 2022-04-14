@@ -17,7 +17,7 @@ export class SendDeckAuctionGenMessage extends Messages {
 
 }
 
-export class SendDeckAuctionTopic extends Topic{
+export class SendDeckAuctionTopic extends Topic {
   messageType: SendDeckAuctionMessage;
 
   exchange = ExchangeHolding.auctionApiExchange;
@@ -29,7 +29,8 @@ export class SendDeckAuctionTopic extends Topic{
 export class SendDeckAuctionMessage extends Messages {
 
   public arr: number[];
-  constructor(arr:number[]) {
+
+  constructor(arr: number[]) {
     super();
     this.arr = arr;
   }
@@ -47,15 +48,12 @@ export class BuyCardsTopic extends Topic {
 }
 
 export class BuyCardsRbMessage extends MessageId {
-  constructor(id:number) {
+  constructor(id: number) {
     super(id);
-    this.id =id;
+    this.id = id;
 
   }
 }
-
-
-
 
 
 export class CheckGoldTopic extends Topic {
@@ -71,15 +69,17 @@ export class CheckGoldTopic extends Topic {
 
 export class CheckGoldMessage extends MessageId {
   private gold: number;
+  private cardId: number;
+  private cost: number;
 
-  constructor(id:number,gold:number) {
+  constructor(id: number, cardId: number, gold: number, cost:number) {
     super(id);
-    this.id =id;
+    this.cardId = cardId;
+    this.id = id;
     this.gold = gold;
+    this.cost = cost;
   }
 }
-
-
 
 
 export class CheckCreditTopic extends Topic {
@@ -92,11 +92,15 @@ export class CheckCreditTopic extends Topic {
 }
 
 export class CheckCreditsMessage extends MessageId {
-  private credits: number;
+  private cardId: number;
+  private gold: number;
+  private cost: number;
 
-  constructor(id:number,credits:number) {
+  constructor(id: number, cardId: number, gold: number, cost:number) {
     super(id);
-    this.id =id;
-    this.credits = credits;
+    this.id = id;
+    this.cardId = cardId;
+    this.gold = gold;
+    this.cost = cost;
   }
 }

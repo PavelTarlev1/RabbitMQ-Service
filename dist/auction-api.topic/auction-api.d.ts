@@ -40,7 +40,9 @@ export declare class CheckGoldTopic extends Topic {
 }
 export declare class CheckGoldMessage extends MessageId {
     private gold;
-    constructor(id: number, gold: number);
+    private cardId;
+    private cost;
+    constructor(id: number, cardId: number, gold: number, cost: number);
 }
 export declare class CheckCreditTopic extends Topic {
     messageType: CheckCreditsMessage;
@@ -50,7 +52,9 @@ export declare class CheckCreditTopic extends Topic {
     routingKey: string;
 }
 export declare class CheckCreditsMessage extends MessageId {
-    private credits;
-    constructor(id: number, credits: number);
+    private cardId;
+    private gold;
+    private cost;
+    constructor(id: number, cardId: number, gold: number, cost: number);
 }
 //# sourceMappingURL=auction-api.d.ts.map

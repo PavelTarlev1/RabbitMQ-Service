@@ -57,10 +57,14 @@ class CheckGoldTopic extends abstract_topic_1.Topic {
 exports.CheckGoldTopic = CheckGoldTopic;
 class CheckGoldMessage extends Messages_1.MessageId {
     gold;
-    constructor(id, gold) {
+    cardId;
+    cost;
+    constructor(id, cardId, gold, cost) {
         super(id);
+        this.cardId = cardId;
         this.id = id;
         this.gold = gold;
+        this.cost = cost;
     }
 }
 exports.CheckGoldMessage = CheckGoldMessage;
@@ -73,11 +77,15 @@ class CheckCreditTopic extends abstract_topic_1.Topic {
 }
 exports.CheckCreditTopic = CheckCreditTopic;
 class CheckCreditsMessage extends Messages_1.MessageId {
-    credits;
-    constructor(id, credits) {
+    cardId;
+    gold;
+    cost;
+    constructor(id, cardId, gold, cost) {
         super(id);
         this.id = id;
-        this.credits = credits;
+        this.cardId = cardId;
+        this.gold = gold;
+        this.cost = cost;
     }
 }
 exports.CheckCreditsMessage = CheckCreditsMessage;
