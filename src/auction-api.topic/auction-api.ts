@@ -105,7 +105,7 @@ export class CheckCreditsMessage extends MessageId {
   }
 }
 
-export class deleteCardAuctionTopic extends Topic {
+export class DeleteCardAuctionTopic extends Topic {
   messageType: CheckCreditsMessage;
 
   exchange = ExchangeHolding.gameUserApiExchange;
@@ -114,7 +114,7 @@ export class deleteCardAuctionTopic extends Topic {
   routingKey = 'deleteCardAuctionTopic-key';
 }
 
-export class deleteCardAuctionMessage extends MessageId{
+export class DeleteCardAuctionMessage extends MessageId{
   constructor(id: number) {
     super(id);
     this.id = id;
