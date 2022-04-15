@@ -123,3 +123,23 @@ export class DeleteCardAuctionMessage extends Messages{
     this.cardsID = cardsID;
   }
 }
+
+export class CardAcquiredTopic extends Topic {
+  messageType: CardAcquiredMessage;
+
+  exchange = ExchangeHolding.deckUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'CardAcquiredTopic-queue';
+  routingKey = 'CardAcquiredTopic-key';
+
+}
+
+export class CardAcquiredMessage extends Messages{
+  public cardId: number;
+  public userId: number;
+  constructor(userId:number, cardId:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+  }
+}

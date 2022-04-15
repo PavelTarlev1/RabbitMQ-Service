@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -106,4 +106,22 @@ class DeleteCardAuctionMessage extends Messages_1.Messages {
     }
 }
 exports.DeleteCardAuctionMessage = DeleteCardAuctionMessage;
+class CardAcquiredTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'CardAcquiredTopic-queue';
+    routingKey = 'CardAcquiredTopic-key';
+}
+exports.CardAcquiredTopic = CardAcquiredTopic;
+class CardAcquiredMessage extends Messages_1.Messages {
+    cardId;
+    userId;
+    constructor(userId, cardId) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
+    }
+}
+exports.CardAcquiredMessage = CardAcquiredMessage;
 //# sourceMappingURL=auction-api.js.map
