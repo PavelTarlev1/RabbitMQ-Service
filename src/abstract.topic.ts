@@ -19,7 +19,6 @@ export class RabbitMQ {
     ) {
     }
     public async sendMessage<T extends Topic>(topic: T, msg: T['messageType']): Promise<void>{
-        console.log(topic);
         await this.amqpConnections.publish(topic.exchange, topic.routingKey, msg);
     }
 
