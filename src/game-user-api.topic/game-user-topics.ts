@@ -127,16 +127,16 @@ export class ExperianceTopic extends Topic {
 
 }
 
-export class BuyCardResponseTopic extends Topic {
-    messageType: BuyCardResponseMessage;
+export class BitCardResponseTopic extends Topic {
+    messageType: BitCardResponseMessage;
 
     exchange = ExchangeHolding.auctionApiExchange;
     exchangeType = ExchangeType.Topic;
-    queue = 'BuyCardResponseTopic-queue';
-    routingKey = 'BuyCardResponseTopic-key';
+    queue = 'BitCardResponseTopic-queue';
+    routingKey = 'BitCardResponseTopic-key';
 
 }
-export class BuyCardResponseMessage extends Messages {
+export class BitCardResponseMessage extends Messages {
     public userId: number;
     public cardId: number;
     public goldAmount: number;

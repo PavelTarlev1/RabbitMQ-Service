@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -114,15 +114,15 @@ class ExperianceTopic extends abstract_topic_1.Topic {
     routingKey = 'ExpAddUserInfo-key';
 }
 exports.ExperianceTopic = ExperianceTopic;
-class BuyCardResponseTopic extends abstract_topic_1.Topic {
+class BitCardResponseTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.auctionApiExchange;
     exchangeType = providers_1.ExchangeType.Topic;
-    queue = 'BuyCardResponseTopic-queue';
-    routingKey = 'BuyCardResponseTopic-key';
+    queue = 'BitCardResponseTopic-queue';
+    routingKey = 'BitCardResponseTopic-key';
 }
-exports.BuyCardResponseTopic = BuyCardResponseTopic;
-class BuyCardResponseMessage extends Messages_1.Messages {
+exports.BitCardResponseTopic = BitCardResponseTopic;
+class BitCardResponseMessage extends Messages_1.Messages {
     userId;
     cardId;
     goldAmount;
@@ -133,5 +133,5 @@ class BuyCardResponseMessage extends Messages_1.Messages {
         this.cardId = cardId;
     }
 }
-exports.BuyCardResponseMessage = BuyCardResponseMessage;
+exports.BitCardResponseMessage = BitCardResponseMessage;
 //# sourceMappingURL=game-user-topics.js.map

@@ -64,14 +64,14 @@ export declare class ExperianceTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class BuyCardResponseTopic extends Topic {
-    messageType: BuyCardResponseMessage;
+export declare class BitCardResponseTopic extends Topic {
+    messageType: BitCardResponseMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class BuyCardResponseMessage extends Messages {
+export declare class BitCardResponseMessage extends Messages {
     userId: number;
     cardId: number;
     goldAmount: number;
