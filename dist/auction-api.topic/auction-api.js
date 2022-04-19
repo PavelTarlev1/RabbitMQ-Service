@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.BidWithGoldMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -124,4 +124,24 @@ class CardAcquiredMessage extends Messages_1.Messages {
     }
 }
 exports.CardAcquiredMessage = CardAcquiredMessage;
+class BidWithGoldTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'BidWithGoldTopic-queue';
+    routingKey = 'BidWithGoldTopic-key';
+}
+exports.BidWithGoldTopic = BidWithGoldTopic;
+class BidWithGoldMessage extends Messages_1.Messages {
+    bidAmount;
+    userId;
+    cardId;
+    constructor(userId, cardId, bidAmount) {
+        super();
+        this.bidAmount = bidAmount;
+        this.userId = userId;
+        this.cardId = cardId;
+    }
+}
+exports.BidWithGoldMessage = BidWithGoldMessage;
 //# sourceMappingURL=auction-api.js.map
