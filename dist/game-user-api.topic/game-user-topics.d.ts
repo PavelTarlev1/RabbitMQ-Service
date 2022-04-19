@@ -77,4 +77,16 @@ export declare class BitCardResponseMessage extends Messages {
     goldAmount: number;
     constructor(userId: number, cardId: number, goldAmount: number);
 }
+export declare class BuyCardResponseTopic extends Topic {
+    messageType: BuyCardResponseMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class BuyCardResponseMessage extends Messages {
+    userId: number;
+    cardId: number;
+    constructor(userId: number, cardId: number);
+}
 //# sourceMappingURL=game-user-topics.d.ts.map

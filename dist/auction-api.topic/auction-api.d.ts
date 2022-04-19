@@ -94,17 +94,4 @@ export declare class BidWithGoldRabbitMessage extends Messages {
     amountGold: number;
     constructor(userId: number, cardId: number, amountGold: number);
 }
-export declare class BidWithGoldResponseTopic extends Topic {
-    messageType: BidWithGoldResponseMessage;
-    exchange: string;
-    exchangeType: ExchangeType;
-    queue: string;
-    routingKey: string;
-}
-export declare class BidWithGoldResponseMessage extends Messages {
-    cardId: number;
-    userId: number;
-    amountGold: number;
-    constructor(userId: number, cardId: number, amountGold: number);
-}
 //# sourceMappingURL=auction-api.d.ts.map

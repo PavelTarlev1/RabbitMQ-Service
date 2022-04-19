@@ -141,3 +141,27 @@ export class BitCardResponseMessage extends Messages {
         this.cardId = cardId;
     }
 }
+
+
+
+export class BuyCardResponseTopic extends Topic {
+    messageType: BuyCardResponseMessage;
+
+    exchange = ExchangeHolding.auctionApiExchange;
+    exchangeType = ExchangeType.Topic;
+    queue = 'BuyCardResponseTopic-queue';
+    routingKey = 'BuyCardResponseTopic-key';
+
+}
+
+
+export class BuyCardResponseMessage extends Messages{
+
+    public userId: number;
+    public cardId: number;
+    constructor(userId:number, cardId:number ) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
+    }
+}

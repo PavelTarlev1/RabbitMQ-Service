@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -129,4 +129,22 @@ class BitCardResponseMessage extends Messages_1.Messages {
     }
 }
 exports.BitCardResponseMessage = BitCardResponseMessage;
+class BuyCardResponseTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.auctionApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'BuyCardResponseTopic-queue';
+    routingKey = 'BuyCardResponseTopic-key';
+}
+exports.BuyCardResponseTopic = BuyCardResponseTopic;
+class BuyCardResponseMessage extends Messages_1.Messages {
+    userId;
+    cardId;
+    constructor(userId, cardId) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
+    }
+}
+exports.BuyCardResponseMessage = BuyCardResponseMessage;
 //# sourceMappingURL=game-user-topics.js.map
