@@ -145,7 +145,7 @@ export class CardAcquiredMessage extends Messages{
 }
 
 export class BidWithGoldTopic extends Topic {
-  messageType: CardAcquiredMessage;
+  messageType: BidWithGoldRabbitMessage;
 
   exchange = ExchangeHolding.gameUserApiExchange;
   exchangeType = ExchangeType.Topic;
@@ -155,6 +155,28 @@ export class BidWithGoldTopic extends Topic {
 
 }
 export class BidWithGoldRabbitMessage extends Messages{
+  public cardId: number;
+  public userId: number;
+  public amountGold:number;
+  constructor(userId:number, cardId:number, amountGold:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+    this.amountGold = amountGold;
+  }
+}
+
+
+export class BidWithGoldResponseTopic extends Topic{
+  messageType: BidWithGoldResponseMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'BidWithGoldResponseTopic-queue';
+  routingKey = 'BidWithGoldResponseTopic-key';
+
+}
+export class BidWithGoldResponseMessage extends Messages{
   public cardId: number;
   public userId: number;
   public amountGold:number;

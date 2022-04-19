@@ -82,13 +82,26 @@ export declare class CardAcquiredMessage extends Messages {
     constructor(userId: number, cardId: number);
 }
 export declare class BidWithGoldTopic extends Topic {
-    messageType: CardAcquiredMessage;
+    messageType: BidWithGoldRabbitMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
 export declare class BidWithGoldRabbitMessage extends Messages {
+    cardId: number;
+    userId: number;
+    amountGold: number;
+    constructor(userId: number, cardId: number, amountGold: number);
+}
+export declare class BidWithGoldResponseTopic extends Topic {
+    messageType: BidWithGoldResponseMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class BidWithGoldResponseMessage extends Messages {
     cardId: number;
     userId: number;
     amountGold: number;
