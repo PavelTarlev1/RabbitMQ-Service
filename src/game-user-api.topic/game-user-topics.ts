@@ -5,12 +5,6 @@ import { MessageGameInfo, MessageId, Messages } from "../abstract.messages/Messa
 
 
 // Creation --- >
-// PullData --- >
-// SendDto < ---
-// Delete GameInfo --- >
-// Delete AuthUser --- >
-
-// Creation --- >
 export class CreateUserMessage extends MessageGameInfo {
     constructor(id:number,username: string) {
         super(id, username);

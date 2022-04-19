@@ -5,11 +5,6 @@ const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
 // Creation --- >
-// PullData --- >
-// SendDto < ---
-// Delete GameInfo --- >
-// Delete AuthUser --- >
-// Creation --- >
 class CreateUserMessage extends Messages_1.MessageGameInfo {
     constructor(id, username) {
         super(id, username);
