@@ -125,8 +125,10 @@ exports.BuyCardResponseTopic = BuyCardResponseTopic;
 class BuyCardResponseMessage extends Messages_1.Messages {
     userId;
     cardId;
-    constructor(userId, cardId) {
+    goldAmount;
+    constructor(userId, cardId, goldAmount) {
         super();
+        this.goldAmount = goldAmount;
         this.userId = userId;
         this.cardId = cardId;
     }

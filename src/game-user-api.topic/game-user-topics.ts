@@ -137,10 +137,12 @@ export class BuyCardResponseTopic extends Topic {
 
 }
 export class BuyCardResponseMessage extends Messages {
-    private userId: number;
-    private cardId: number;
-    constructor(userId: number, cardId:number) {
+    public userId: number;
+    public cardId: number;
+    public goldAmount: number;
+    constructor(userId: number, cardId:number, goldAmount:number) {
         super();
+        this.goldAmount = goldAmount;
         this.userId = userId;
         this.cardId = cardId;
     }

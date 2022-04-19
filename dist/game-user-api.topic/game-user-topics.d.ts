@@ -72,8 +72,9 @@ export declare class BuyCardResponseTopic extends Topic {
     routingKey: string;
 }
 export declare class BuyCardResponseMessage extends Messages {
-    private userId;
-    private cardId;
-    constructor(userId: number, cardId: number);
+    userId: number;
+    cardId: number;
+    goldAmount: number;
+    constructor(userId: number, cardId: number, goldAmount: number);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map
