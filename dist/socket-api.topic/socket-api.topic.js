@@ -16,12 +16,12 @@ class WebsocketNotifyAllMessage extends Messages_1.MessageId {
     }
 }
 exports.WebsocketNotifyAllMessage = WebsocketNotifyAllMessage;
-class WebsocketNotifyUserMessage extends Messages_1.MessageId {
+class WebsocketNotifyUserMessage extends Messages_1.Messages {
     event;
     payload;
     userId;
     constructor(userId, event, payload) {
-        super(userId);
+        super();
         this.userId = userId;
         this.event = event;
         this.payload = payload;

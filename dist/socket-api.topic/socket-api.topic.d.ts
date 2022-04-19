@@ -1,13 +1,13 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
-import { MessageId } from "../abstract.messages/Messages";
+import { MessageId, Messages } from "../abstract.messages/Messages";
 export declare class WebsocketNotifyAllMessage extends MessageId {
     private event;
     payload: any;
     userId: number;
     constructor(userId: number, event: string, payload: any);
 }
-export declare class WebsocketNotifyUserMessage extends MessageId {
+export declare class WebsocketNotifyUserMessage extends Messages {
     private event;
     payload: any;
     userId: number;
