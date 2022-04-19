@@ -21,6 +21,7 @@ let RabbitMQ = class RabbitMQ {
         this.amqpConnections = amqpConnections;
     }
     async sendMessage(topic, msg) {
+        console.log(topic);
         await this.amqpConnections.publish(topic.exchange, topic.routingKey, msg);
     }
 };

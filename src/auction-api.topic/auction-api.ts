@@ -143,24 +143,3 @@ export class CardAcquiredMessage extends Messages{
     this.cardId = cardId;
   }
 }
-
-export class BidWithGoldTopic extends Topic {
-  messageType: BidWithGoldMessage;
-
-  exchange = ExchangeHolding.deckUserApiExchange;
-  exchangeType = ExchangeType.Topic;
-  queue = 'BidWithGoldTopic-queue';
-  routingKey = 'BidWithGoldTopic-key';
-}
-
-export class BidWithGoldMessage extends Messages {
-  public bidAmount: number;
-  public userId: number;
-  public cardId: number;
-  constructor(userId:number, cardId:number, bidAmount:number,  ) {
-    super();
-    this.bidAmount = bidAmount;
-    this.userId = userId;
-    this.cardId = cardId;
-  }
-}
