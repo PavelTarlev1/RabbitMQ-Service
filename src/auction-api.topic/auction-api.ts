@@ -143,3 +143,25 @@ export class CardAcquiredMessage extends Messages{
     this.cardId = cardId;
   }
 }
+
+export class BidWithGoldTopic extends Topic {
+  messageType: CardAcquiredMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'BidWithGoldTopic-queue';
+  routingKey = 'BidWithGoldTopic-key';
+
+
+}
+export class BidWithGoldRabbitMessage extends Messages{
+  public cardId: number;
+  public userId: number;
+  public amountGold:number;
+  constructor(userId:number, cardId:number, amountGold:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+    this.amountGold = amountGold;
+  }
+}
