@@ -157,7 +157,7 @@ export class BidWithGoldMessage extends Messages {
   public bidAmount: number;
   public userId: number;
   public cardId: number;
-  constructor(userId:number, cardId:number, bidAmount:number,  ) {
+  constructor(userId:number, cardId:number, bidAmount:number) {
     super();
     this.bidAmount = bidAmount;
     this.userId = userId;
