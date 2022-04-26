@@ -166,3 +166,22 @@ export class BidWithGoldRabbitMessage extends Messages{
   }
 }
 
+export class AuctionedCardsToGameUserTopic extends Topic {
+  messageType: AuctionedCardsToGameUserMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'AuctionedCardsToGameUserTopic-queue';
+  routingKey = 'AuctionedCardsToGameUserTopic-key';
+
+}
+
+
+export class AuctionedCardsToGameUserMessage extends Messages {
+  public arr: { userId: number; cardId: number }[];
+  constructor(arr:{userId:number, cardId:number}[]) {
+    super();
+    this.arr = arr;
+  }
+
+}
