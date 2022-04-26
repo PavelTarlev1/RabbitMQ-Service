@@ -3,7 +3,7 @@ import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId, Messages } from "../abstract.messages/Messages";
 
 export class WebsocketNotifyAllMessage extends MessageId {
-  private event: string;
+  public event: string;
   public payload: any;
   public userId: number;
 
@@ -16,7 +16,7 @@ export class WebsocketNotifyAllMessage extends MessageId {
 }
 
 export class WebsocketNotifyUserMessage  extends Messages{
-  private event: string;
+  public event: string;
   public payload: any;
   public userId: number;
 
