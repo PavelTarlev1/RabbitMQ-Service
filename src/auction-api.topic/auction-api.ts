@@ -178,8 +178,10 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 
 
 export class AuctionedCardsToGameUserMessage extends Messages {
-  public arr: { fromPlayer:boolean, userId: number; cardId: number }[];
-  constructor(userId:number,arr:{fromPlayer:boolean,userId:number, cardId:number}[]) {
+  public arr: { cardId:number, fromPlayer:boolean,
+    userIdCard:number }[];
+  constructor(userId:number,arr:{cardId:number, fromPlayer:boolean,
+    userIdCard:number}[]) {
     super();
     this.arr = arr;
   }

@@ -103,14 +103,14 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
     arr: {
-        fromPlayer: boolean;
-        userId: number;
         cardId: number;
+        fromPlayer: boolean;
+        userIdCard: number;
     }[];
     constructor(userId: number, arr: {
-        fromPlayer: boolean;
-        userId: number;
         cardId: number;
+        fromPlayer: boolean;
+        userIdCard: number;
     }[]);
 }
 //# sourceMappingURL=auction-api.d.ts.map
