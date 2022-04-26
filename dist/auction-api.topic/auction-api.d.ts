@@ -103,10 +103,12 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
     arr: {
+        fromPlayer: boolean;
         userId: number;
         cardId: number;
     }[];
-    constructor(arr: {
+    constructor(userId: number, arr: {
+        fromPlayer: boolean;
         userId: number;
         cardId: number;
     }[]);
