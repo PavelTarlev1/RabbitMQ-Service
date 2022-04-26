@@ -89,4 +89,24 @@ export declare class BuyCardResponseMessage extends Messages {
     cardId: number;
     constructor(userId: number, cardId: number);
 }
+export declare class AuctionGetCardInfoTopic extends Topic {
+    messageType: AuctionGetCardInfoMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class AuctionGetCardInfoMessage extends Messages {
+    userId: number;
+    arr: {
+        cardId: number;
+        fromPlayer: boolean;
+        name: string;
+    }[];
+    constructor(userId: number, arr: {
+        cardId: number;
+        fromPlayer: boolean;
+        name: string;
+    }[]);
+}
 //# sourceMappingURL=game-user-topics.d.ts.map

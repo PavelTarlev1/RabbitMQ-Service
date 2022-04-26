@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -147,4 +147,22 @@ class BuyCardResponseMessage extends Messages_1.Messages {
     }
 }
 exports.BuyCardResponseMessage = BuyCardResponseMessage;
+class AuctionGetCardInfoTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'AuctionGetCardInfoTopic-queue';
+    routingKey = 'AuctionGetCardInfoTopic-key';
+}
+exports.AuctionGetCardInfoTopic = AuctionGetCardInfoTopic;
+class AuctionGetCardInfoMessage extends Messages_1.Messages {
+    userId;
+    arr;
+    constructor(userId, arr) {
+        super();
+        this.userId = userId;
+        this.arr = arr;
+    }
+}
+exports.AuctionGetCardInfoMessage = AuctionGetCardInfoMessage;
 //# sourceMappingURL=game-user-topics.js.map

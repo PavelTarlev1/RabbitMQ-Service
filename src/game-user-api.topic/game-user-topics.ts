@@ -165,3 +165,26 @@ export class BuyCardResponseMessage extends Messages{
         this.cardId = cardId;
     }
 }
+
+
+export class AuctionGetCardInfoTopic extends Topic {
+    messageType: AuctionGetCardInfoMessage;
+
+    exchange = ExchangeHolding.deckUserApiExchange;
+    exchangeType = ExchangeType.Topic;
+    queue = 'AuctionGetCardInfoTopic-queue';
+    routingKey = 'AuctionGetCardInfoTopic-key';
+
+}
+
+export class AuctionGetCardInfoMessage extends Messages {
+    public userId: number;
+    public arr: { cardId: number; fromPlayer: boolean; name: string }[];
+
+
+    constructor(userId:number, arr:{ cardId: number, fromPlayer: boolean, name: string }[]) {
+        super();
+        this.userId = userId;
+        this.arr = arr;
+    }
+}
