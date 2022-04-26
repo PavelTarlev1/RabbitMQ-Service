@@ -154,8 +154,10 @@ class AuctionedCardsToGameUserTopic extends abstract_topic_1.Topic {
 exports.AuctionedCardsToGameUserTopic = AuctionedCardsToGameUserTopic;
 class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
     arr;
+    userId;
     constructor(userId, arr) {
         super();
+        this.userId = userId;
         this.arr = arr;
     }
 }
