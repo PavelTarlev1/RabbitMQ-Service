@@ -101,12 +101,14 @@ export declare class AuctionGetCardInfoMessage extends Messages {
     arr: {
         cardId: number;
         fromPlayer: boolean;
-        name: string;
+        creditCost: number;
+        bidderName: string;
     }[];
     constructor(userId: number, arr: {
         cardId: number;
         fromPlayer: boolean;
-        name: string;
+        creditCost: number;
+        bidderName: string;
     }[]);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map
