@@ -105,13 +105,16 @@ export declare class AuctionedCardsToGameUserMessage extends Messages {
     arr: {
         cardId: number;
         fromPlayer: boolean;
+        creditCost: number;
         userIdCard: number;
     }[];
     userId: number;
+    private toAll;
     constructor(userId: number, arr: {
         cardId: number;
         fromPlayer: boolean;
+        creditCost: number;
         userIdCard: number;
-    }[]);
+    }[], toAll?: boolean);
 }
 //# sourceMappingURL=auction-api.d.ts.map

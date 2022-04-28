@@ -155,10 +155,12 @@ exports.AuctionedCardsToGameUserTopic = AuctionedCardsToGameUserTopic;
 class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
     arr;
     userId;
-    constructor(userId, arr) {
+    toAll;
+    constructor(userId, arr, toAll) {
         super();
         this.userId = userId;
         this.arr = arr;
+        this.toAll = toAll;
     }
 }
 exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;

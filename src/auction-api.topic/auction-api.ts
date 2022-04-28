@@ -178,13 +178,16 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 
 
 export class AuctionedCardsToGameUserMessage extends Messages {
-  public arr: { cardId:number, fromPlayer:boolean,
+  public arr: { cardId:number, fromPlayer:boolean,  creditCost:number,
     userIdCard:number }[];
   public userId: number;
-  constructor(userId:number,arr:{cardId:number, fromPlayer:boolean,
-    userIdCard:number}[]) {
+  private toAll: boolean;
+
+  constructor(userId:number,arr:{cardId:number, fromPlayer:boolean,  creditCost:number,
+    userIdCard:number}[],toAll?: boolean) {
     super();
     this.userId = userId;
     this.arr = arr;
+    this.toAll = toAll;
   }
 }
