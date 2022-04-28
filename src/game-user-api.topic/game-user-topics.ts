@@ -179,6 +179,7 @@ export class AuctionGetCardInfoTopic extends Topic {
 
 export class AuctionGetCardInfoMessage extends Messages {
     public userId: number;
+    public toAll:boolean;
     public arr: { cardId: number;
         fromPlayer: boolean;
         creditCost:number;
@@ -188,9 +189,11 @@ export class AuctionGetCardInfoMessage extends Messages {
     constructor(userId:number, arr:{ cardId: number,
         fromPlayer: boolean,
         creditCost:number;
-        bidderName:string; }[]) {
+        bidderName:string; }[], toAll:boolean) {
         super();
         this.userId = userId;
         this.arr = arr;
+        this.toAll =toAll;
     }
+
 }

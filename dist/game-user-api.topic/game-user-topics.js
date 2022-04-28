@@ -157,11 +157,13 @@ class AuctionGetCardInfoTopic extends abstract_topic_1.Topic {
 exports.AuctionGetCardInfoTopic = AuctionGetCardInfoTopic;
 class AuctionGetCardInfoMessage extends Messages_1.Messages {
     userId;
+    toAll;
     arr;
-    constructor(userId, arr) {
+    constructor(userId, arr, toAll) {
         super();
         this.userId = userId;
         this.arr = arr;
+        this.toAll = toAll;
     }
 }
 exports.AuctionGetCardInfoMessage = AuctionGetCardInfoMessage;

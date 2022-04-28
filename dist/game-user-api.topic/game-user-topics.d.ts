@@ -98,6 +98,7 @@ export declare class AuctionGetCardInfoTopic extends Topic {
 }
 export declare class AuctionGetCardInfoMessage extends Messages {
     userId: number;
+    toAll: boolean;
     arr: {
         cardId: number;
         fromPlayer: boolean;
@@ -109,6 +110,6 @@ export declare class AuctionGetCardInfoMessage extends Messages {
         fromPlayer: boolean;
         creditCost: number;
         bidderName: string;
-    }[]);
+    }[], toAll: boolean);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map
