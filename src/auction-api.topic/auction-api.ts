@@ -93,17 +93,16 @@ export class CheckCreditTopic extends Topic {
   routingKey = 'CheckCreditTopicc-key';
 }
 
-export class CheckCreditsMessage extends MessageId {
-  private cardId: number;
-  private gold: number;
-  private cost: number;
+export class CheckCreditsMessage extends Messages {
+  public cardId: number;
+  public credits: number;
+  private userId: number;
 
-  constructor(id: number, cardId: number, gold: number, cost:number) {
-    super(id);
-    this.id = id;
+  constructor(userId: number, cardId: number, credits: number) {
+    super();
+    this.userId = userId;
     this.cardId = cardId;
-    this.gold = gold;
-    this.cost = cost;
+    this.credits = credits;
   }
 }
 

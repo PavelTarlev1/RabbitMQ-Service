@@ -52,11 +52,11 @@ export declare class CheckCreditTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class CheckCreditsMessage extends MessageId {
-    private cardId;
-    private gold;
-    private cost;
-    constructor(id: number, cardId: number, gold: number, cost: number);
+export declare class CheckCreditsMessage extends Messages {
+    cardId: number;
+    credits: number;
+    private userId;
+    constructor(userId: number, cardId: number, credits: number);
 }
 export declare class DeleteCardAuctionTopic extends Topic {
     messageType: DeleteCardAuctionMessage;

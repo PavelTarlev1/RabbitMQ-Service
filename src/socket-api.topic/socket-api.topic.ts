@@ -2,14 +2,12 @@ import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId, Messages } from "../abstract.messages/Messages";
 
-export class WebsocketNotifyAllMessage extends MessageId {
+export class WebsocketNotifyAllMessage extends Messages {
   public event: string;
   public payload: any;
-  public userId: number;
 
-  constructor(userId: number, event: string, payload: any) {
-    super(userId);
-    this.userId = userId;
+  constructor(event: string, payload: any) {
+    super();
     this.event = event;
     this.payload = payload;
   }

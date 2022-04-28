@@ -77,16 +77,15 @@ class CheckCreditTopic extends abstract_topic_1.Topic {
     routingKey = 'CheckCreditTopicc-key';
 }
 exports.CheckCreditTopic = CheckCreditTopic;
-class CheckCreditsMessage extends Messages_1.MessageId {
+class CheckCreditsMessage extends Messages_1.Messages {
     cardId;
-    gold;
-    cost;
-    constructor(id, cardId, gold, cost) {
-        super(id);
-        this.id = id;
+    credits;
+    userId;
+    constructor(userId, cardId, credits) {
+        super();
+        this.userId = userId;
         this.cardId = cardId;
-        this.gold = gold;
-        this.cost = cost;
+        this.credits = credits;
     }
 }
 exports.CheckCreditsMessage = CheckCreditsMessage;

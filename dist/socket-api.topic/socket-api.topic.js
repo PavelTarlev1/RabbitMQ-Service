@@ -4,13 +4,11 @@ exports.WebsocketNotifyAllTopic = exports.WebsocketNotifyUserTopic = exports.Web
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
-class WebsocketNotifyAllMessage extends Messages_1.MessageId {
+class WebsocketNotifyAllMessage extends Messages_1.Messages {
     event;
     payload;
-    userId;
-    constructor(userId, event, payload) {
-        super(userId);
-        this.userId = userId;
+    constructor(event, payload) {
+        super();
         this.event = event;
         this.payload = payload;
     }
