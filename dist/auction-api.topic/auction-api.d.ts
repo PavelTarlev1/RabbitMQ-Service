@@ -109,7 +109,7 @@ export declare class AuctionedCardsToGameUserMessage extends Messages {
         userIdCard: number;
     }[];
     userId: number;
-    private toAll;
+    toAll: boolean;
     constructor(userId: number, arr: {
         cardId: number;
         fromPlayer: boolean;

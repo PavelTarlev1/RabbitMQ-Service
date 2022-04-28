@@ -181,7 +181,7 @@ export class AuctionedCardsToGameUserMessage extends Messages {
   public arr: { cardId:number, fromPlayer:boolean,  creditCost:number,
     userIdCard:number }[];
   public userId: number;
-  private toAll: boolean;
+  public toAll: boolean;
 
   constructor(userId:number,arr:{cardId:number, fromPlayer:boolean,  creditCost:number,
     userIdCard:number}[],toAll?: boolean) {
