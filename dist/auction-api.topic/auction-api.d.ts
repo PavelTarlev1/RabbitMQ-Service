@@ -1,6 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeType } from "../providers/providers";
-import { MessageId, Messages } from "../abstract.messages/Messages";
+import { Messages } from "../abstract.messages/Messages";
 export declare class SendDeckAuctionGenTopic extends Topic {
     messageType: SendDeckAuctionGenMessage;
     exchange: string;
@@ -28,8 +28,10 @@ export declare class BuyCardsTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class BuyCardsRbMessage extends MessageId {
-    constructor(id: number);
+export declare class BuyCardsRbMessage extends Messages {
+    private userId;
+    private cardId;
+    constructor(userId: number, cardId: number);
 }
 export declare class CheckGoldTopic extends Topic {
     messageType: CheckGoldMessage;

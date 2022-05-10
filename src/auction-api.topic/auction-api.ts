@@ -27,9 +27,7 @@ export class SendDeckAuctionTopic extends Topic {
 }
 
 export class SendDeckAuctionMessage extends Messages {
-
   public arr: number[];
-
   constructor(arr: number[]) {
     super();
     this.arr = arr;
@@ -43,15 +41,15 @@ export class BuyCardsTopic extends Topic {
   exchangeType = ExchangeType.Topic;
   queue = 'BuyCardsTopic-queue';
   routingKey = 'BuyCardsTopic-key';
-
-
 }
 
-export class BuyCardsRbMessage extends MessageId {
-  constructor(id: number) {
-    super(id);
-    this.id = id;
-
+export class BuyCardsRbMessage extends Messages {
+  private userId: number;
+  private cardId: number;
+  constructor(userId: number, cardId:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
   }
 }
 

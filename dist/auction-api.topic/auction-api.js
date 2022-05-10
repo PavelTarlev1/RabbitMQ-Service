@@ -40,10 +40,13 @@ class BuyCardsTopic extends abstract_topic_1.Topic {
     routingKey = 'BuyCardsTopic-key';
 }
 exports.BuyCardsTopic = BuyCardsTopic;
-class BuyCardsRbMessage extends Messages_1.MessageId {
-    constructor(id) {
-        super(id);
-        this.id = id;
+class BuyCardsRbMessage extends Messages_1.Messages {
+    userId;
+    cardId;
+    constructor(userId, cardId) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
     }
 }
 exports.BuyCardsRbMessage = BuyCardsRbMessage;
