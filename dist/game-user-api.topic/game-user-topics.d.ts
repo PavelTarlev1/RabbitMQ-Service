@@ -99,17 +99,26 @@ export declare class AuctionGetCardInfoTopic extends Topic {
 export declare class AuctionGetCardInfoMessage extends Messages {
     userId: number;
     toAll: boolean;
-    arr: {
-        cardId: number;
-        fromPlayer: boolean;
-        creditCost: number;
-        bidderName: string;
-    }[];
-    constructor(userId: number, arr: {
-        cardId: number;
-        fromPlayer: boolean;
-        creditCost: number;
-        bidderName: string;
-    }[], toAll: boolean);
+    gameCards: ResultAuctionedCards[];
+    playerCards: ResultPlayerCards[];
+    historyCards: ResultHistoryCards[];
+    constructor(userId: number, gameCards: ResultAuctionedCards[], playerCards: ResultPlayerCards[], historyCards: ResultHistoryCards[], toAll: boolean);
+}
+export declare class ResultAuctionedCards {
+    cardId: number;
+    goldCost: number;
+    creditCost: number;
+    bidderName?: string;
+}
+export declare class ResultPlayerCards {
+    cardId: number;
+    goldCost: number;
+    creditCost: number;
+    bidderName?: string;
+}
+export declare class ResultHistoryCards {
+    cardId: number;
+    wonBy: string;
+    wonOn: string;
 }
 //# sourceMappingURL=game-user-topics.d.ts.map

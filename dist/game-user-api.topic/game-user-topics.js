@@ -1,9 +1,19 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.ResultHistoryCards = exports.ResultPlayerCards = exports.ResultAuctionedCards = exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
+const class_transformer_1 = require("class-transformer");
 // Creation --- >
 class CreateUserMessage extends Messages_1.MessageGameInfo {
     constructor(id, username) {
@@ -158,13 +168,49 @@ exports.AuctionGetCardInfoTopic = AuctionGetCardInfoTopic;
 class AuctionGetCardInfoMessage extends Messages_1.Messages {
     userId;
     toAll;
-    arr;
-    constructor(userId, arr, toAll) {
+    gameCards;
+    playerCards;
+    historyCards;
+    constructor(userId, gameCards, playerCards, historyCards, toAll) {
         super();
+        this.playerCards = playerCards;
+        this.gameCards = gameCards;
+        this.historyCards = historyCards;
         this.userId = userId;
-        this.arr = arr;
         this.toAll = toAll;
     }
 }
+__decorate([
+    (0, class_transformer_1.Type)(() => ResultAuctionedCards),
+    __metadata("design:type", Array)
+], AuctionGetCardInfoMessage.prototype, "gameCards", void 0);
+__decorate([
+    (0, class_transformer_1.Type)(() => ResultPlayerCards),
+    __metadata("design:type", Array)
+], AuctionGetCardInfoMessage.prototype, "playerCards", void 0);
+__decorate([
+    (0, class_transformer_1.Type)(() => ResultHistoryCards),
+    __metadata("design:type", Array)
+], AuctionGetCardInfoMessage.prototype, "historyCards", void 0);
 exports.AuctionGetCardInfoMessage = AuctionGetCardInfoMessage;
+class ResultAuctionedCards {
+    cardId;
+    goldCost;
+    creditCost;
+    bidderName;
+}
+exports.ResultAuctionedCards = ResultAuctionedCards;
+class ResultPlayerCards {
+    cardId;
+    goldCost;
+    creditCost;
+    bidderName;
+}
+exports.ResultPlayerCards = ResultPlayerCards;
+class ResultHistoryCards {
+    cardId;
+    wonBy;
+    wonOn;
+}
+exports.ResultHistoryCards = ResultHistoryCards;
 //# sourceMappingURL=game-user-topics.js.map

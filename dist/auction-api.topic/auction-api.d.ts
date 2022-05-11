@@ -115,7 +115,7 @@ export declare class AuctionedCard {
     cardId: number;
     goldCost: number;
     creditCost: number;
-    bidderId?: number;
+    bidderName: string;
 }
 export declare class HistoryCards {
     cardId: number;

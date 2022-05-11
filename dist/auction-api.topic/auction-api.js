@@ -196,7 +196,7 @@ class AuctionedCard {
     cardId;
     goldCost;
     creditCost;
-    bidderId;
+    bidderName;
 }
 exports.AuctionedCard = AuctionedCard;
 class HistoryCards {
