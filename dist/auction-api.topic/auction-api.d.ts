@@ -104,19 +104,28 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
     routingKey: string;
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
-    arr: {
-        cardId: number;
-        fromPlayer: boolean;
-        creditCost: number;
-        userIdCard: number;
-    }[];
     userId: number;
     toAll: boolean;
-    constructor(userId: number, arr: {
-        cardId: number;
-        fromPlayer: boolean;
-        creditCost: number;
-        userIdCard: number;
-    }[], toAll?: boolean);
+    gameCards: AuctionedCards[];
+    playerCards: AuctionedCards[];
+    historyCards: HistoryCards[];
+    constructor(userId: number, gameCards: AuctionedCards[], playerCards: AuctionedCards[], historyCards: HistoryCards[], toAll?: boolean);
+}
+export declare class AuctionedCards {
+    cardId: number;
+    fromPlayer: boolean;
+    creditCost: number;
+    userIdCard: number;
+}
+export declare class HistoryCards {
+    cardId: number;
+    wonByWhoId: number;
+    cost: number;
+    wonOn: string;
+    wonWith: WonWith;
+}
+export declare enum WonWith {
+    credits = 0,
+    gold = 1
 }
 //# sourceMappingURL=auction-api.d.ts.map

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuctionedCardsToGameUserMessage = exports.AuctionedCardsToGameUserTopic = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.WonWith = exports.HistoryCards = exports.AuctionedCards = exports.AuctionedCardsToGameUserMessage = exports.AuctionedCardsToGameUserTopic = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -155,15 +155,39 @@ class AuctionedCardsToGameUserTopic extends abstract_topic_1.Topic {
 }
 exports.AuctionedCardsToGameUserTopic = AuctionedCardsToGameUserTopic;
 class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
-    arr;
     userId;
     toAll;
-    constructor(userId, arr, toAll) {
+    gameCards;
+    playerCards;
+    historyCards;
+    constructor(userId, gameCards, playerCards, historyCards, toAll) {
         super();
         this.userId = userId;
-        this.arr = arr;
+        this.gameCards = gameCards;
+        this.playerCards = playerCards;
+        this.historyCards = historyCards;
         this.toAll = toAll;
     }
 }
 exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;
+class AuctionedCards {
+    cardId;
+    fromPlayer;
+    creditCost;
+    userIdCard;
+}
+exports.AuctionedCards = AuctionedCards;
+class HistoryCards {
+    cardId;
+    wonByWhoId;
+    cost;
+    wonOn;
+    wonWith;
+}
+exports.HistoryCards = HistoryCards;
+var WonWith;
+(function (WonWith) {
+    WonWith[WonWith["credits"] = 0] = "credits";
+    WonWith[WonWith["gold"] = 1] = "gold";
+})(WonWith = exports.WonWith || (exports.WonWith = {}));
 //# sourceMappingURL=auction-api.js.map

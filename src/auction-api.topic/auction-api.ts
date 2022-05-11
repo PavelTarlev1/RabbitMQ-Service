@@ -1,6 +1,7 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId, Messages } from "../abstract.messages/Messages";
+import exp from "constants";
 
 
 // Auth --->
@@ -174,17 +175,46 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 }
 
 
+
+
+
+
 export class AuctionedCardsToGameUserMessage extends Messages {
-  public arr: { cardId:number, fromPlayer:boolean,  creditCost:number,
-    userIdCard:number }[];
   public userId: number;
   public toAll: boolean;
+  public gameCards: AuctionedCards[];
+  public playerCards: AuctionedCards[];
+  public historyCards:HistoryCards[];
 
-  constructor(userId:number,arr:{cardId:number, fromPlayer:boolean,  creditCost:number,
-    userIdCard:number}[],toAll?: boolean) {
+
+  constructor(userId:number,gameCards:AuctionedCards[],
+    playerCards:AuctionedCards[],
+    historyCards: HistoryCards[] ,toAll?: boolean) {
     super();
     this.userId = userId;
-    this.arr = arr;
+    this.gameCards = gameCards;
+    this.playerCards = playerCards;
+    this.historyCards = historyCards;
     this.toAll = toAll;
+
   }
+}
+
+export class AuctionedCards {
+  cardId:number;
+  fromPlayer:boolean;
+  creditCost:number;
+  userIdCard:number;
+}
+
+export class HistoryCards {
+  cardId:number;
+  wonByWhoId:number;
+  cost:number;
+  wonOn:string;
+  wonWith:WonWith
+}
+export enum WonWith{
+  credits,
+  gold,
 }
