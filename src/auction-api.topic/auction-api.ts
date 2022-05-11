@@ -207,15 +207,15 @@ export class AuctionedCard {
   cardId:number;
   goldCost:number;
   creditCost:number;
-  bidderId: number;
+  bidderId?: number;
 }
 
 export class HistoryCards {
   cardId:number;
-  wonByWhoId:number;
-  cost:number;
-  wonOn:string;
-  wonWith:WonWith
+  wonByWhoId?:number;
+  cost?:number;
+  wonOn?:Date;
+  wonWith?:WonWith
 }
 export enum WonWith{
   credits,
