@@ -106,12 +106,12 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
 export declare class AuctionedCardsToGameUserMessage extends Messages {
     userId: number;
     toAll: boolean;
-    gameCards: AuctionedCards[];
-    playerCards: AuctionedCards[];
+    gameCards: AuctionedCard[];
+    playerCards: AuctionedCard[];
     historyCards: HistoryCards[];
-    constructor(userId: number, gameCards: AuctionedCards[], playerCards: AuctionedCards[], historyCards: HistoryCards[], toAll?: boolean);
+    constructor(userId: number, gameCards: AuctionedCard[], playerCards: AuctionedCard[], historyCards: HistoryCards[], toAll?: boolean);
 }
-export declare class AuctionedCards {
+export declare class AuctionedCard {
     cardId: number;
     fromPlayer: boolean;
     creditCost: number;

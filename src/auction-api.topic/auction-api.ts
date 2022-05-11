@@ -2,6 +2,7 @@ import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageId, Messages } from "../abstract.messages/Messages";
 import exp from "constants";
+import { Type } from "class-transformer";
 
 
 // Auth --->
@@ -182,13 +183,16 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 export class AuctionedCardsToGameUserMessage extends Messages {
   public userId: number;
   public toAll: boolean;
-  public gameCards: AuctionedCards[];
-  public playerCards: AuctionedCards[];
+  @Type(() => AuctionedCard)
+  public gameCards: AuctionedCard[];
+  @Type(() => AuctionedCard)
+  public playerCards:AuctionedCard [];
+  @Type(() => HistoryCards)
   public historyCards:HistoryCards[];
 
 
-  constructor(userId:number,gameCards:AuctionedCards[],
-    playerCards:AuctionedCards[],
+  constructor(userId:number,gameCards:AuctionedCard[],
+    playerCards: AuctionedCard[],
     historyCards: HistoryCards[] ,toAll?: boolean) {
     super();
     this.userId = userId;
@@ -196,11 +200,10 @@ export class AuctionedCardsToGameUserMessage extends Messages {
     this.playerCards = playerCards;
     this.historyCards = historyCards;
     this.toAll = toAll;
-
   }
 }
 
-export class AuctionedCards {
+export class AuctionedCard {
   cardId:number;
   fromPlayer:boolean;
   creditCost:number;
