@@ -113,9 +113,10 @@ export declare class AuctionedCardsToGameUserMessage extends Messages {
 }
 export declare class AuctionedCard {
     cardId: number;
+    goldCost: number;
     fromPlayer: boolean;
     creditCost: number;
-    userIdCard: number;
+    bidderId: number;
 }
 export declare class HistoryCards {
     cardId: number;

@@ -194,9 +194,10 @@ __decorate([
 exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;
 class AuctionedCard {
     cardId;
+    goldCost;
     fromPlayer;
     creditCost;
-    userIdCard;
+    bidderId;
 }
 exports.AuctionedCard = AuctionedCard;
 class HistoryCards {
