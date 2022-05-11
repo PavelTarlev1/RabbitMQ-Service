@@ -215,7 +215,7 @@ export class HistoryCards {
   wonByWhoId?:number;
   cost?:number;
   wonOn?:Date;
-  wonWith?:WonWith
+  wonWith:WonWith
 }
 export enum WonWith{
   credits,

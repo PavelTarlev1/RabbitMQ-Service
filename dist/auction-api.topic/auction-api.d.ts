@@ -122,7 +122,7 @@ export declare class HistoryCards {
     wonByWhoId?: number;
     cost?: number;
     wonOn?: Date;
-    wonWith?: WonWith;
+    wonWith: WonWith;
 }
 export declare enum WonWith {
     credits = 0,
