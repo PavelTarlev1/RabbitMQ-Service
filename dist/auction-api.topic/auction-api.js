@@ -195,7 +195,6 @@ exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;
 class AuctionedCard {
     cardId;
     goldCost;
-    fromPlayer;
     creditCost;
     bidderId;
 }

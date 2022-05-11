@@ -206,7 +206,6 @@ export class AuctionedCardsToGameUserMessage extends Messages {
 export class AuctionedCard {
   cardId:number;
   goldCost:number;
-  fromPlayer:boolean;
   creditCost:number;
   bidderId: number;
 }
