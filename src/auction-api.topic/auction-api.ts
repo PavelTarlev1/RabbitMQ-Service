@@ -221,3 +221,25 @@ export enum WonWith{
   credits,
   gold,
 }
+
+export class AuctionCardToUserServiceTopic extends Topic {
+  messageType: AuctionCardToUserServiceMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'AuctionCardToUserServiceTopic-queue';
+  routingKey = 'AuctionCardToUserServiceTopic-key';
+
+}
+
+export class AuctionCardToUserServiceMessage extends Messages {
+  public userId: number;
+  public cardId: number;
+  public goldAmount: number;
+  constructor(userId:number, cardId:number, goldAmount:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+    this.goldAmount = goldAmount;
+  }
+}

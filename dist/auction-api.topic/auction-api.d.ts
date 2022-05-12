@@ -128,4 +128,17 @@ export declare enum WonWith {
     credits = 0,
     gold = 1
 }
+export declare class AuctionCardToUserServiceTopic extends Topic {
+    messageType: AuctionCardToUserServiceMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class AuctionCardToUserServiceMessage extends Messages {
+    userId: number;
+    cardId: number;
+    goldAmount: number;
+    constructor(userId: number, cardId: number, goldAmount: number);
+}
 //# sourceMappingURL=auction-api.d.ts.map
