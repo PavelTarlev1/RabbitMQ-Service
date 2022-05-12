@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResultHistoryCards = exports.ResultPlayerCards = exports.ResultAuctionedCards = exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.AuctionCardToCardServiceMessage = exports.AuctionCardToCardServiceTopic = exports.ResultHistoryCards = exports.ResultPlayerCards = exports.ResultAuctionedCards = exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -213,4 +213,22 @@ class ResultHistoryCards {
     wonOn;
 }
 exports.ResultHistoryCards = ResultHistoryCards;
+class AuctionCardToCardServiceTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.deckUserApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'AuctionCardToCardServiceTopic-queue';
+    routingKey = 'AuctionCardToCardServiceTopic-key';
+}
+exports.AuctionCardToCardServiceTopic = AuctionCardToCardServiceTopic;
+class AuctionCardToCardServiceMessage extends Messages_1.Messages {
+    userId;
+    cardId;
+    constructor(userId, cardId) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
+    }
+}
+exports.AuctionCardToCardServiceMessage = AuctionCardToCardServiceMessage;
 //# sourceMappingURL=game-user-topics.js.map

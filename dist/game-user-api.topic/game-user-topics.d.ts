@@ -121,4 +121,16 @@ export declare class ResultHistoryCards {
     wonBy: string;
     wonOn: string;
 }
+export declare class AuctionCardToCardServiceTopic extends Topic {
+    messageType: AuctionCardToCardServiceMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class AuctionCardToCardServiceMessage extends Messages {
+    userId: number;
+    cardId: number;
+    constructor(userId: number, cardId: number);
+}
 //# sourceMappingURL=game-user-topics.d.ts.map

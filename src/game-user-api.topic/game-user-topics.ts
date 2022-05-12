@@ -238,3 +238,27 @@ export class ResultHistoryCards {
 
   wonOn: string;
 }
+
+
+
+
+export class AuctionCardToCardServiceTopic extends Topic {
+  messageType: AuctionCardToCardServiceMessage;
+
+  exchange = ExchangeHolding.deckUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'AuctionCardToCardServiceTopic-queue';
+  routingKey = 'AuctionCardToCardServiceTopic-key';
+
+}
+export class AuctionCardToCardServiceMessage extends Messages {
+
+  public userId: number;
+  public cardId: number;
+
+  constructor(userId: number, cardId: number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+  }
+}
