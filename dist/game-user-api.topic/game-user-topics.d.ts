@@ -131,6 +131,7 @@ export declare class AuctionCardToCardServiceTopic extends Topic {
 export declare class AuctionCardToCardServiceMessage extends Messages {
     userId: number;
     cardId: number;
-    constructor(userId: number, cardId: number);
+    gold: number;
+    constructor(userId: number, gold: number, cardId: number);
 }
 //# sourceMappingURL=game-user-topics.d.ts.map

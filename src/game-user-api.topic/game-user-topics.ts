@@ -255,9 +255,11 @@ export class AuctionCardToCardServiceMessage extends Messages {
 
   public userId: number;
   public cardId: number;
+  public gold:number;
 
-  constructor(userId: number, cardId: number) {
+  constructor(userId: number,gold:number, cardId: number) {
     super();
+    this.gold = gold;
     this.userId = userId;
     this.cardId = cardId;
   }
