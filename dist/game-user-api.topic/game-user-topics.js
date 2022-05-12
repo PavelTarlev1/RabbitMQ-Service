@@ -224,12 +224,14 @@ exports.AuctionCardToCardServiceTopic = AuctionCardToCardServiceTopic;
 class AuctionCardToCardServiceMessage extends Messages_1.Messages {
     userId;
     cardId;
-    gold;
-    constructor(userId, gold, cardId) {
+    userGold;
+    goldAmount;
+    constructor(userId, userGold, cardId, goldAmount) {
         super();
-        this.gold = gold;
+        this.userGold = userGold;
         this.userId = userId;
         this.cardId = cardId;
+        this.goldAmount = goldAmount;
     }
 }
 exports.AuctionCardToCardServiceMessage = AuctionCardToCardServiceMessage;
