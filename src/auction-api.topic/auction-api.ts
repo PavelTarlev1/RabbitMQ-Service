@@ -191,7 +191,9 @@ export class AuctionedCardsToGameUserMessage extends Messages {
   public historyCards:HistoryCards[];
 
 
-  constructor(userId:number,gameCards:AuctionedCard[],
+  constructor(
+    userId:number,
+    gameCards:AuctionedCard[],
     playerCards: AuctionedCard[],
     historyCards: HistoryCards[] ,toAll?: boolean) {
     super();
@@ -204,10 +206,10 @@ export class AuctionedCardsToGameUserMessage extends Messages {
 }
 
 export class AuctionedCard {
-  cardId:number;
+  cardId: number;
   goldCost:number;
-  creditCost:number;
-  bidderName:string
+  creditCost: number;
+  bidderId?: number;
 }
 
 export class HistoryCards {
