@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuctionCardToUserServiceMessage = exports.AuctionCardToUserServiceTopic = exports.WonWith = exports.HistoryCards = exports.AuctionedCard = exports.AuctionedCardsToGameUserMessage = exports.AuctionedCardsToGameUserTopic = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.AuctionCardToAuctionServiceMessage = exports.AuctionCardToAuctionServiceTopic = exports.AuctionCardToUserServiceMessage = exports.AuctionCardToUserServiceTopic = exports.WonWith = exports.HistoryCards = exports.AuctionedCard = exports.AuctionedCardsToGameUserMessage = exports.AuctionedCardsToGameUserTopic = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.CheckCreditsMessage = exports.CheckCreditTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -232,4 +232,26 @@ class AuctionCardToUserServiceMessage extends Messages_1.Messages {
     }
 }
 exports.AuctionCardToUserServiceMessage = AuctionCardToUserServiceMessage;
+class AuctionCardToAuctionServiceTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.auctionApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'AuctionCardToAuctionServiceTopic-queue';
+    routingKey = 'AuctionCardToAuctionServiceTopic-key';
+}
+exports.AuctionCardToAuctionServiceTopic = AuctionCardToAuctionServiceTopic;
+class AuctionCardToAuctionServiceMessage extends Messages_1.Messages {
+    userId;
+    cardId;
+    goldAmount;
+    creditAmount;
+    constructor(userId, cardId, goldAmount, creditAmount) {
+        super();
+        this.userId = userId;
+        this.cardId = cardId;
+        this.goldAmount = goldAmount;
+        this.creditAmount = creditAmount;
+    }
+}
+exports.AuctionCardToAuctionServiceMessage = AuctionCardToAuctionServiceMessage;
 //# sourceMappingURL=auction-api.js.map

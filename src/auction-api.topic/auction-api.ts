@@ -245,3 +245,27 @@ export class AuctionCardToUserServiceMessage extends Messages {
     this.goldAmount = goldAmount;
   }
 }
+
+export class AuctionCardToAuctionServiceTopic extends Topic{
+  messageType: AuctionCardToAuctionServiceMessage;
+
+  exchange = ExchangeHolding.auctionApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'AuctionCardToAuctionServiceTopic-queue';
+  routingKey = 'AuctionCardToAuctionServiceTopic-key';
+}
+
+
+export class AuctionCardToAuctionServiceMessage extends Messages {
+  public userId: number;
+  public cardId: number;
+  public goldAmount: number;
+  public creditAmount:number;
+  constructor(userId:number, cardId:number, goldAmount:number,creditAmount:number) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+    this.goldAmount = goldAmount;
+    this.creditAmount = creditAmount;
+  }
+}

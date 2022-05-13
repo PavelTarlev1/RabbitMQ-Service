@@ -141,4 +141,18 @@ export declare class AuctionCardToUserServiceMessage extends Messages {
     goldAmount: number;
     constructor(userId: number, cardId: number, goldAmount: number);
 }
+export declare class AuctionCardToAuctionServiceTopic extends Topic {
+    messageType: AuctionCardToAuctionServiceMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class AuctionCardToAuctionServiceMessage extends Messages {
+    userId: number;
+    cardId: number;
+    goldAmount: number;
+    creditAmount: number;
+    constructor(userId: number, cardId: number, goldAmount: number, creditAmount: number);
+}
 //# sourceMappingURL=auction-api.d.ts.map
