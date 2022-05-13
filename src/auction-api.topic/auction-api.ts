@@ -253,6 +253,7 @@ export class AuctionCardToAuctionServiceTopic extends Topic{
   exchangeType = ExchangeType.Topic;
   queue = 'AuctionCardToAuctionServiceTopic-queue';
   routingKey = 'AuctionCardToAuctionServiceTopic-key';
+
 }
 
 
@@ -260,12 +261,14 @@ export class AuctionCardToAuctionServiceMessage extends Messages {
   public userId: number;
   public cardId: number;
   public goldAmount: number;
-  public creditAmount:number;
-  constructor(userId:number, cardId:number, goldAmount:number,creditAmount:number) {
+  public attack: number;
+  public health: number;
+  constructor(userId:number, cardId:number, attack:number, health:number,goldAmount:number) {
     super();
     this.userId = userId;
     this.cardId = cardId;
+    this.attack = attack;
+    this.health = health;
     this.goldAmount = goldAmount;
-    this.creditAmount = creditAmount;
   }
 }

@@ -152,7 +152,8 @@ export declare class AuctionCardToAuctionServiceMessage extends Messages {
     userId: number;
     cardId: number;
     goldAmount: number;
-    creditAmount: number;
-    constructor(userId: number, cardId: number, goldAmount: number, creditAmount: number);
+    attack: number;
+    health: number;
+    constructor(userId: number, cardId: number, attack: number, health: number, goldAmount: number);
 }
 //# sourceMappingURL=auction-api.d.ts.map

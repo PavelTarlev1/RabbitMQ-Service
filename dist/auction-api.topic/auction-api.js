@@ -244,13 +244,15 @@ class AuctionCardToAuctionServiceMessage extends Messages_1.Messages {
     userId;
     cardId;
     goldAmount;
-    creditAmount;
-    constructor(userId, cardId, goldAmount, creditAmount) {
+    attack;
+    health;
+    constructor(userId, cardId, attack, health, goldAmount) {
         super();
         this.userId = userId;
         this.cardId = cardId;
+        this.attack = attack;
+        this.health = health;
         this.goldAmount = goldAmount;
-        this.creditAmount = creditAmount;
     }
 }
 exports.AuctionCardToAuctionServiceMessage = AuctionCardToAuctionServiceMessage;
