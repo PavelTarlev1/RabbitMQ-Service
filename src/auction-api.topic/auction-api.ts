@@ -272,3 +272,26 @@ export class AuctionCardToAuctionServiceMessage extends Messages {
     this.goldAmount = goldAmount;
   }
 }
+
+export class AuctionedCardRemoveFromUserDeckTopic extends Topic{
+  messageType: AuctionCardToAuctionServiceMessage;
+
+  exchange = ExchangeHolding.deckUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'auctionedCardRemoveFromUserDeckTopic-queue';
+  routingKey = 'auctionedCardRemoveFromUserDeckTopic-key';
+
+}
+
+
+export class AuctionedCardRemoveFromUserDeckMessage extends Messages {
+  public userId: number;
+  public cardId: number;
+
+  constructor(userId:number, cardId:number,) {
+    super();
+    this.userId = userId;
+    this.cardId = cardId;
+  }
+}
+

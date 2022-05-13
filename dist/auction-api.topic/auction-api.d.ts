@@ -156,4 +156,16 @@ export declare class AuctionCardToAuctionServiceMessage extends Messages {
     health: number;
     constructor(userId: number, cardId: number, attack: number, health: number, goldAmount: number);
 }
+export declare class AuctionedCardRemoveFromUserDeckTopic extends Topic {
+    messageType: AuctionCardToAuctionServiceMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class AuctionedCardRemoveFromUserDeckMessage extends Messages {
+    userId: number;
+    cardId: number;
+    constructor(userId: number, cardId: number);
+}
 //# sourceMappingURL=auction-api.d.ts.map
