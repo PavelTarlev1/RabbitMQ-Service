@@ -274,7 +274,7 @@ export class AuctionCardToAuctionServiceMessage extends Messages {
 }
 
 export class AuctionedCardRemoveFromUserDeckTopic extends Topic{
-  messageType: AuctionCardToAuctionServiceMessage;
+  messageType: AuctionedCardRemoveFromUserDeckMessage;
 
   exchange = ExchangeHolding.deckUserApiExchange;
   exchangeType = ExchangeType.Topic;

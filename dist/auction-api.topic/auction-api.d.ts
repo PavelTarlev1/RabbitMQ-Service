@@ -157,7 +157,7 @@ export declare class AuctionCardToAuctionServiceMessage extends Messages {
     constructor(userId: number, cardId: number, attack: number, health: number, goldAmount: number);
 }
 export declare class AuctionedCardRemoveFromUserDeckTopic extends Topic {
-    messageType: AuctionCardToAuctionServiceMessage;
+    messageType: AuctionedCardRemoveFromUserDeckMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
