@@ -168,4 +168,16 @@ export declare class AuctionedCardRemoveFromUserDeckMessage extends Messages {
     cardId: number;
     constructor(userId: number, cardId: number);
 }
+export declare class GoldRefundTopic extends Topic {
+    messageType: AuctionedCardRemoveFromUserDeckMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+export declare class GoldRefundMessage extends Messages {
+    userId: number;
+    goldAmount: number;
+    constructor(userId: number, goldAmount: number);
+}
 //# sourceMappingURL=auction-api.d.ts.map

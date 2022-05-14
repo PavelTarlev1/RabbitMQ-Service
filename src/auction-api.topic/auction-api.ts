@@ -295,3 +295,23 @@ export class AuctionedCardRemoveFromUserDeckMessage extends Messages {
   }
 }
 
+export class GoldRefundTopic extends Topic {
+  messageType: AuctionedCardRemoveFromUserDeckMessage;
+
+  exchange = ExchangeHolding.gameUserApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'GoldRefundTopic-queue';
+  routingKey = 'GoldRefundTopic-key';
+}
+
+export class GoldRefundMessage extends Messages {
+  public userId: number;
+  public goldAmount: number;
+
+  constructor(userId:number, goldAmount:number,) {
+    super();
+    this.userId = userId;
+    this.goldAmount = goldAmount;
+  }
+}
+
