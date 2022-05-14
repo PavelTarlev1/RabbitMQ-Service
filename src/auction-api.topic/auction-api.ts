@@ -296,7 +296,7 @@ export class AuctionedCardRemoveFromUserDeckMessage extends Messages {
 }
 
 export class GoldRefundTopic extends Topic {
-  messageType: AuctionedCardRemoveFromUserDeckMessage;
+  messageType: GoldRefundMessage;
 
   exchange = ExchangeHolding.gameUserApiExchange;
   exchangeType = ExchangeType.Topic;

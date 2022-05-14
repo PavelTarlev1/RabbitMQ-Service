@@ -169,7 +169,7 @@ export declare class AuctionedCardRemoveFromUserDeckMessage extends Messages {
     constructor(userId: number, cardId: number);
 }
 export declare class GoldRefundTopic extends Topic {
-    messageType: AuctionedCardRemoveFromUserDeckMessage;
+    messageType: GoldRefundMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
