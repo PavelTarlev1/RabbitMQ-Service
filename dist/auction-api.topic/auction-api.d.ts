@@ -47,17 +47,17 @@ export declare class CheckGoldMessage extends Messages {
     userId: number;
     constructor(userId: number, cardId: number, goldGiving: number, CardCost: number);
 }
-export declare class CheckCreditTopic extends Topic {
-    messageType: CheckCreditsMessage;
+export declare class BuyCardTopic extends Topic {
+    messageType: BuyCardTopicMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
 }
-export declare class CheckCreditsMessage extends Messages {
+export declare class BuyCardTopicMessage extends Messages {
     cardId: number;
     credits: number;
-    private userId;
+    userId: number;
     constructor(userId: number, cardId: number, credits: number);
 }
 export declare class DeleteCardAuctionTopic extends Topic {

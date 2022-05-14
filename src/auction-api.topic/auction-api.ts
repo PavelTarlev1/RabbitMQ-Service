@@ -84,19 +84,19 @@ export class CheckGoldMessage extends Messages {
 }
 
 
-export class CheckCreditTopic extends Topic {
-  messageType: CheckCreditsMessage;
+export class BuyCardTopic extends Topic {
+  messageType: BuyCardTopicMessage;
 
   exchange = ExchangeHolding.gameUserApiExchange;
   exchangeType = ExchangeType.Topic;
-  queue = 'CheckCreditTopic-queue';
-  routingKey = 'CheckCreditTopicc-key';
+  queue = 'buyCardTopic-queue';
+  routingKey = 'buyCardTopic-key';
 }
 
-export class CheckCreditsMessage extends Messages {
+export class BuyCardTopicMessage extends Messages {
   public cardId: number;
   public credits: number;
-  private userId: number;
+  public userId: number;
 
   constructor(userId: number, cardId: number, credits: number) {
     super();
