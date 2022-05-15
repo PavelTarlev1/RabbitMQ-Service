@@ -119,7 +119,7 @@ export declare class ResultPlayerCards {
 export declare class ResultHistoryCards {
     cardId: number;
     wonBy: string;
-    wonOn: string;
+    wonOn: Date;
 }
 export declare class AuctionCardToCardServiceTopic extends Topic {
     messageType: AuctionCardToCardServiceMessage;

@@ -236,11 +236,8 @@ export class ResultHistoryCards {
 
   wonBy: string;
 
-  wonOn: string;
+  wonOn: Date;
 }
-
-
-
 
 export class AuctionCardToCardServiceTopic extends Topic {
   messageType: AuctionCardToCardServiceMessage;
