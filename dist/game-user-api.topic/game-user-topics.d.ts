@@ -89,17 +89,29 @@ export declare class BuyCardResponseMessage extends Messages {
     cardId: number;
     constructor(userId: number, cardId: number);
 }
+export declare class GetNameCard {
+    cardId: number;
+    bidder: number;
+    name: string;
+}
+export declare enum UsedFor {
+    gameCards = 0,
+    userCards = 1,
+    historyCards = 2
+}
+export declare class AuctionGetCardInfoMessage extends Messages {
+    cards: GetNameCard[];
+    usedFor: UsedFor | (boolean | undefined);
+    userId: number;
+    toAll: boolean;
+    constructor(cards: GetNameCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean);
+}
 export declare class AuctionGetCardInfoTopic extends Topic {
     messageType: AuctionGetCardInfoMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
-}
-export declare class AuctionGetCardInfoMessage extends Messages {
-    userId: number;
-    toAll: boolean;
-    constructor(userId: number, toAll: boolean);
 }
 export declare class AuctionCardToCardServiceTopic extends Topic {
     messageType: AuctionCardToCardServiceMessage;

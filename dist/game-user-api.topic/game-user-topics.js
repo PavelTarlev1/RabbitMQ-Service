@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuctionCardToCardServiceMessage = exports.AuctionCardToCardServiceTopic = exports.AuctionGetCardInfoMessage = exports.AuctionGetCardInfoTopic = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
+exports.AuctionCardToCardServiceMessage = exports.AuctionCardToCardServiceTopic = exports.AuctionGetCardInfoTopic = exports.AuctionGetCardInfoMessage = exports.UsedFor = exports.GetNameCard = exports.BuyCardResponseMessage = exports.BuyCardResponseTopic = exports.BitCardResponseMessage = exports.BitCardResponseTopic = exports.ExperianceTopic = exports.ExpUserMessage = exports.ErrorUserMessage = exports.ErrorUserTopic = exports.DeleteUserMessage = exports.DeleteUserTopic = exports.SendUserMessage = exports.SendUserTopic = exports.PullUserMessage = exports.PullUserTopic = exports.CreateUserGameTopic = exports.CreateUserMessage = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -147,6 +147,32 @@ class BuyCardResponseMessage extends Messages_1.Messages {
     }
 }
 exports.BuyCardResponseMessage = BuyCardResponseMessage;
+class GetNameCard {
+    cardId;
+    bidder;
+    name;
+}
+exports.GetNameCard = GetNameCard;
+var UsedFor;
+(function (UsedFor) {
+    UsedFor[UsedFor["gameCards"] = 0] = "gameCards";
+    UsedFor[UsedFor["userCards"] = 1] = "userCards";
+    UsedFor[UsedFor["historyCards"] = 2] = "historyCards";
+})(UsedFor = exports.UsedFor || (exports.UsedFor = {}));
+class AuctionGetCardInfoMessage extends Messages_1.Messages {
+    cards;
+    usedFor;
+    userId;
+    toAll;
+    constructor(cards, usedFor, userId, toAll) {
+        super();
+        this.cards = cards;
+        this.usedFor = usedFor;
+        this.userId = userId;
+        this.toAll = toAll;
+    }
+}
+exports.AuctionGetCardInfoMessage = AuctionGetCardInfoMessage;
 class AuctionGetCardInfoTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.deckUserApiExchange;
@@ -155,16 +181,6 @@ class AuctionGetCardInfoTopic extends abstract_topic_1.Topic {
     routingKey = 'AuctionGetCardInfoTopic-key';
 }
 exports.AuctionGetCardInfoTopic = AuctionGetCardInfoTopic;
-class AuctionGetCardInfoMessage extends Messages_1.Messages {
-    userId;
-    toAll;
-    constructor(userId, toAll) {
-        super();
-        this.userId = userId;
-        this.toAll = toAll;
-    }
-}
-exports.AuctionGetCardInfoMessage = AuctionGetCardInfoMessage;
 class AuctionCardToCardServiceTopic extends abstract_topic_1.Topic {
     messageType;
     exchange = providers_1.ExchangeHolding.deckUserApiExchange;

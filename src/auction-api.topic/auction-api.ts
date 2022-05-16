@@ -164,6 +164,42 @@ export class BidWithGoldRabbitMessage extends Messages{
   }
 }
 
+class GetNameCard {
+  cardId:number;
+
+  bidder:number;
+}
+
+
+enum UsedFor {
+  gameCards = 0,
+  userCards,
+  historyCards,
+}
+
+
+
+export class AuctionedCardsToGameUserMessage extends Messages {
+  @Type(() => GetNameCard)
+  public cards:GetNameCard[];
+
+  public usedFor:UsedFor | (boolean | undefined);
+
+  public userId:number;
+
+  public toAll:boolean;
+
+  constructor(cards:GetNameCard[], usedFor:UsedFor | (boolean | undefined), userId:number, toAll:boolean
+  ) {
+    super();
+    this.cards = cards;
+    this.usedFor = usedFor;
+    this.userId = userId;
+    this.toAll = toAll;
+  }
+}
+
+
 export class AuctionedCardsToGameUserTopic extends Topic {
   messageType: AuctionedCardsToGameUserMessage;
 
@@ -173,46 +209,7 @@ export class AuctionedCardsToGameUserTopic extends Topic {
   routingKey = 'AuctionedCardsToGameUserTopic-key';
 
 }
-export class GetNameCard {
-  cardId:number;
 
-  bidder:number;
-}
-export enum UsedFor {
-  gameCards = 0,
-  userCards,
-  historyCards,
-}
-
-
-
-
-export class AuctionedCard {
-
-  public cards:GetNameCard[];
-
-  public usedFor:UsedFor | (boolean | undefined);
-
-  public userId:number;
-
-  public toAll:boolean;
-
-}
-
-
-
-export class AuctionedCardsToGameUserMessage extends Messages {
-
-
-  @Type(() => AuctionedCard)
-  public auctionedCards: AuctionedCard;
-  constructor(
-    gameCards:AuctionedCard,
-  ) {
-    super();
-    this.auctionedCards = gameCards;
-  }
-}
 
 
 export class AuctionCardToUserServiceTopic extends Topic {

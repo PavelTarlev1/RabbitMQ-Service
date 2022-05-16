@@ -96,31 +96,28 @@ export declare class BidWithGoldRabbitMessage extends Messages {
     amountGold: number;
     constructor(userId: number, cardId: number, amountGold: number);
 }
+declare class GetNameCard {
+    cardId: number;
+    bidder: number;
+}
+declare enum UsedFor {
+    gameCards = 0,
+    userCards = 1,
+    historyCards = 2
+}
+export declare class AuctionedCardsToGameUserMessage extends Messages {
+    cards: GetNameCard[];
+    usedFor: UsedFor | (boolean | undefined);
+    userId: number;
+    toAll: boolean;
+    constructor(cards: GetNameCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean);
+}
 export declare class AuctionedCardsToGameUserTopic extends Topic {
     messageType: AuctionedCardsToGameUserMessage;
     exchange: string;
     exchangeType: ExchangeType;
     queue: string;
     routingKey: string;
-}
-export declare class GetNameCard {
-    cardId: number;
-    bidder: number;
-}
-export declare enum UsedFor {
-    gameCards = 0,
-    userCards = 1,
-    historyCards = 2
-}
-export declare class AuctionedCard {
-    cards: GetNameCard[];
-    usedFor: UsedFor | (boolean | undefined);
-    userId: number;
-    toAll: boolean;
-}
-export declare class AuctionedCardsToGameUserMessage extends Messages {
-    auctionedCards: AuctionedCard;
-    constructor(gameCards: AuctionedCard);
 }
 export declare class AuctionCardToUserServiceTopic extends Topic {
     messageType: AuctionCardToUserServiceMessage;
@@ -174,4 +171,5 @@ export declare class GoldRefundMessage extends Messages {
     goldAmount: number;
     constructor(userId: number, goldAmount: number);
 }
+export {};
 //# sourceMappingURL=auction-api.d.ts.map

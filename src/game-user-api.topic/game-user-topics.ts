@@ -173,6 +173,37 @@ export class BuyCardResponseMessage extends Messages {
 }
 
 
+export class GetNameCard {
+  cardId:number;
+
+  bidder:number;
+
+  name:string;
+}
+export enum UsedFor {
+  gameCards = 0,
+  userCards,
+  historyCards,
+}
+
+export class AuctionGetCardInfoMessage extends Messages {
+  public cards:GetNameCard[];
+
+  public usedFor:UsedFor | (boolean | undefined);
+
+  public userId:number;
+
+  public toAll:boolean;
+
+constructor(cards:GetNameCard[], usedFor:UsedFor  | (boolean | undefined),userId:number,toAll:boolean ) {
+  super();
+  this.cards = cards;
+  this.usedFor = usedFor;
+  this.userId = userId;
+  this.toAll = toAll;
+}
+}
+
 export class AuctionGetCardInfoTopic extends Topic {
   messageType: AuctionGetCardInfoMessage;
 
@@ -183,21 +214,7 @@ export class AuctionGetCardInfoTopic extends Topic {
 
 }
 
-export class AuctionGetCardInfoMessage extends Messages {
-  public userId: number;
-  public toAll: boolean;
 
-
-
-  constructor(userId: number,
-
-    toAll: boolean) {
-    super();
-    this.userId = userId;
-    this.toAll = toAll;
-  }
-
-}
 
 export class AuctionCardToCardServiceTopic extends Topic {
   messageType: AuctionCardToCardServiceMessage;
