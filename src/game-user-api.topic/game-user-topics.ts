@@ -1,6 +1,7 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageGameInfo, MessageId, Messages } from "../abstract.messages/Messages";
+import { Type } from "class-transformer";
 
 
 // Creation --- >
@@ -173,12 +174,12 @@ export class BuyCardResponseMessage extends Messages {
 }
 
 
-export class GetNameCard {
+export class NamedCard {
   cardId:number;
 
   bidder:number;
 
-  name:string;
+  name:string | undefined | null;
 }
 export enum UsedFor {
   gameCards = 0,
@@ -187,7 +188,8 @@ export enum UsedFor {
 }
 
 export class AuctionGetCardInfoMessage extends Messages {
-  public cards:GetNameCard[];
+  @Type(() => NamedCard)
+  public cards:NamedCard[];
 
   public usedFor:UsedFor | (boolean | undefined);
 
@@ -195,7 +197,7 @@ export class AuctionGetCardInfoMessage extends Messages {
 
   public toAll:boolean;
 
-constructor(cards:GetNameCard[], usedFor:UsedFor  | (boolean | undefined),userId:number,toAll:boolean ) {
+constructor(cards:NamedCard[], usedFor:UsedFor  | (boolean | undefined),userId:number,toAll:boolean ) {
   super();
   this.cards = cards;
   this.usedFor = usedFor;

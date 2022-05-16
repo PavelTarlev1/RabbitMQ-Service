@@ -89,10 +89,10 @@ export declare class BuyCardResponseMessage extends Messages {
     cardId: number;
     constructor(userId: number, cardId: number);
 }
-export declare class GetNameCard {
+export declare class NamedCard {
     cardId: number;
     bidder: number;
-    name: string;
+    name: string | undefined | null;
 }
 export declare enum UsedFor {
     gameCards = 0,
@@ -100,11 +100,11 @@ export declare enum UsedFor {
     historyCards = 2
 }
 export declare class AuctionGetCardInfoMessage extends Messages {
-    cards: GetNameCard[];
+    cards: NamedCard[];
     usedFor: UsedFor | (boolean | undefined);
     userId: number;
     toAll: boolean;
-    constructor(cards: GetNameCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean);
+    constructor(cards: NamedCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean);
 }
 export declare class AuctionGetCardInfoTopic extends Topic {
     messageType: AuctionGetCardInfoMessage;
