@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GoldRefundMessage = exports.GoldRefundTopic = exports.AuctionedCardRemoveFromUserDeckMessage = exports.AuctionedCardRemoveFromUserDeckTopic = exports.AuctionCardToAuctionServiceMessage = exports.AuctionCardToAuctionServiceTopic = exports.AuctionCardToUserServiceMessage = exports.AuctionCardToUserServiceTopic = exports.AuctionedCardsToGameUserTopic = exports.AuctionedCardsToGameUserMessage = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.BuyCardTopicMessage = exports.BuyCardTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
+exports.AuctionReturnCardsMessage = exports.AuctionReturnCardsTopic = exports.GoldRefundMessage = exports.GoldRefundTopic = exports.AuctionedCardRemoveFromUserDeckMessage = exports.AuctionedCardRemoveFromUserDeckTopic = exports.AuctionCardToAuctionServiceMessage = exports.AuctionCardToAuctionServiceTopic = exports.AuctionCardToUserServiceMessage = exports.AuctionCardToUserServiceTopic = exports.AuctionedCardsToGameUserTopic = exports.AuctionedCardsToGameUserMessage = exports.BidWithGoldRabbitMessage = exports.BidWithGoldTopic = exports.CardAcquiredMessage = exports.CardAcquiredTopic = exports.DeleteCardAuctionMessage = exports.DeleteCardAuctionTopic = exports.BuyCardTopicMessage = exports.BuyCardTopic = exports.CheckGoldMessage = exports.CheckGoldTopic = exports.BuyCardsRbMessage = exports.BuyCardsTopic = exports.SendDeckAuctionMessage = exports.SendDeckAuctionTopic = exports.SendDeckAuctionGenMessage = exports.SendDeckAuctionGenTopic = void 0;
 const abstract_topic_1 = require("../abstract.topic");
 const providers_1 = require("../providers/providers");
 const Messages_1 = require("../abstract.messages/Messages");
@@ -272,4 +272,37 @@ class GoldRefundMessage extends Messages_1.Messages {
     }
 }
 exports.GoldRefundMessage = GoldRefundMessage;
+class AuctionReturnCardsTopic extends abstract_topic_1.Topic {
+    messageType;
+    exchange = providers_1.ExchangeHolding.auctionApiExchange;
+    exchangeType = providers_1.ExchangeType.Topic;
+    queue = 'AuctionReturnCardsTopic-queue';
+    routingKey = 'AuctionReturnCardsTopic-key';
+}
+exports.AuctionReturnCardsTopic = AuctionReturnCardsTopic;
+class ReturnCard {
+    cardId;
+    bidder;
+    name;
+    attack;
+    health;
+}
+class AuctionReturnCardsMessage extends Messages_1.Messages {
+    cards;
+    usedFor;
+    userId;
+    toAll;
+    constructor(cards, usedFor, userId, toAll) {
+        super();
+        this.cards = cards;
+        this.usedFor = usedFor;
+        this.userId = userId;
+        this.toAll = toAll;
+    }
+}
+__decorate([
+    (0, class_transformer_1.Type)(() => ReturnCard),
+    __metadata("design:type", Array)
+], AuctionReturnCardsMessage.prototype, "cards", void 0);
+exports.AuctionReturnCardsMessage = AuctionReturnCardsMessage;
 //# sourceMappingURL=auction-api.js.map

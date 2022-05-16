@@ -175,12 +175,13 @@ export class BuyCardResponseMessage extends Messages {
 
 
 export class NamedCard {
-  cardId:number;
+  cardId: number;
 
-  bidder:number;
+  bidder: number;
 
-  name:string | undefined | null;
+  name: string | undefined | null;
 }
+
 export enum UsedFor {
   gameCards = 0,
   userCards,
@@ -189,21 +190,21 @@ export enum UsedFor {
 
 export class AuctionGetCardInfoMessage extends Messages {
   @Type(() => NamedCard)
-  public cards:NamedCard[];
+  public cards: NamedCard[];
 
-  public usedFor:UsedFor | (boolean | undefined);
+  public usedFor: UsedFor | (boolean | undefined);
 
-  public userId:number;
+  public userId: number;
 
-  public toAll:boolean;
+  public toAll: boolean;
 
-constructor(cards:NamedCard[], usedFor:UsedFor  | (boolean | undefined),userId:number,toAll:boolean ) {
-  super();
-  this.cards = cards;
-  this.usedFor = usedFor;
-  this.userId = userId;
-  this.toAll = toAll;
-}
+  constructor(cards: NamedCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean) {
+    super();
+    this.cards = cards;
+    this.usedFor = usedFor;
+    this.userId = userId;
+    this.toAll = toAll;
+  }
 }
 
 export class AuctionGetCardInfoTopic extends Topic {
@@ -217,7 +218,6 @@ export class AuctionGetCardInfoTopic extends Topic {
 }
 
 
-
 export class AuctionCardToCardServiceTopic extends Topic {
   messageType: AuctionCardToCardServiceMessage;
 
@@ -227,14 +227,15 @@ export class AuctionCardToCardServiceTopic extends Topic {
   routingKey = 'AuctionCardToCardServiceTopic-key';
 
 }
+
 export class AuctionCardToCardServiceMessage extends Messages {
 
   public userId: number;
   public cardId: number;
-  public userGold:number;
-  public goldAmount:number
+  public userGold: number;
+  public goldAmount: number
 
-  constructor(userId: number,userGold:number, cardId: number, goldAmount:number) {
+  constructor(userId: number, userGold: number, cardId: number, goldAmount: number) {
     super();
     this.userGold = userGold;
     this.userId = userId;

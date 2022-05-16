@@ -303,3 +303,46 @@ export class GoldRefundMessage extends Messages {
   }
 }
 
+export class AuctionReturnCardsTopic extends Topic {
+  messageType: AuctionReturnCardsMessage;
+
+  exchange = ExchangeHolding.auctionApiExchange;
+  exchangeType = ExchangeType.Topic;
+  queue = 'AuctionReturnCardsTopic-queue';
+  routingKey = 'AuctionReturnCardsTopic-key';
+}
+
+
+class ReturnCard {
+  cardId:number;
+
+  bidder:number;
+
+  name:string;
+
+  attack:number;
+
+  health:number;
+
+}
+
+
+export class AuctionReturnCardsMessage extends Messages {
+  @Type(() => ReturnCard)
+  public cards:ReturnCard[];
+
+  public usedFor:UsedFor | (boolean | undefined);
+
+  public userId:number;
+
+  public toAll:boolean;
+
+  constructor(cards:ReturnCard[], usedFor:UsedFor | (boolean | undefined), userId:number, toAll:boolean
+  ) {
+    super();
+    this.cards = cards;
+    this.usedFor = usedFor;
+    this.userId = userId;
+    this.toAll = toAll;
+  }
+}

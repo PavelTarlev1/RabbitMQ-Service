@@ -171,5 +171,26 @@ export declare class GoldRefundMessage extends Messages {
     goldAmount: number;
     constructor(userId: number, goldAmount: number);
 }
+export declare class AuctionReturnCardsTopic extends Topic {
+    messageType: AuctionReturnCardsMessage;
+    exchange: string;
+    exchangeType: ExchangeType;
+    queue: string;
+    routingKey: string;
+}
+declare class ReturnCard {
+    cardId: number;
+    bidder: number;
+    name: string;
+    attack: number;
+    health: number;
+}
+export declare class AuctionReturnCardsMessage extends Messages {
+    cards: ReturnCard[];
+    usedFor: UsedFor | (boolean | undefined);
+    userId: number;
+    toAll: boolean;
+    constructor(cards: ReturnCard[], usedFor: UsedFor | (boolean | undefined), userId: number, toAll: boolean);
+}
 export {};
 //# sourceMappingURL=auction-api.d.ts.map
