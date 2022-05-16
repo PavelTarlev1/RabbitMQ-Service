@@ -104,7 +104,7 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
     routingKey: string;
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
-    gameCards: AuctionedCard[];
+    auctionedCards: AuctionedCard[];
     constructor(gameCards: AuctionedCard[]);
 }
 export declare class AuctionedCard {

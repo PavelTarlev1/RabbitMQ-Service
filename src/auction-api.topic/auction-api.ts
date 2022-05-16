@@ -176,13 +176,13 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 
 export class AuctionedCardsToGameUserMessage extends Messages {
   @Type(() => AuctionedCard)
-  public gameCards: AuctionedCard[];
+  public auctionedCards: AuctionedCard[];
 
   constructor(
     gameCards:AuctionedCard[],
   ) {
     super();
-    this.gameCards = gameCards;
+    this.auctionedCards = gameCards;
   }
 }
 

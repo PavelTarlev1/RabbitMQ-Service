@@ -165,16 +165,16 @@ class AuctionedCardsToGameUserTopic extends abstract_topic_1.Topic {
 }
 exports.AuctionedCardsToGameUserTopic = AuctionedCardsToGameUserTopic;
 class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
-    gameCards;
+    auctionedCards;
     constructor(gameCards) {
         super();
-        this.gameCards = gameCards;
+        this.auctionedCards = gameCards;
     }
 }
 __decorate([
     (0, class_transformer_1.Type)(() => AuctionedCard),
     __metadata("design:type", Array)
-], AuctionedCardsToGameUserMessage.prototype, "gameCards", void 0);
+], AuctionedCardsToGameUserMessage.prototype, "auctionedCards", void 0);
 exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;
 class AuctionedCard {
     cards;
