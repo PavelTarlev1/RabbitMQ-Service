@@ -173,13 +173,19 @@ export class AuctionedCardsToGameUserTopic extends Topic {
   routingKey = 'AuctionedCardsToGameUserTopic-key';
 
 }
+export class GetNameCard {
+  cardId:number;
 
-export class AuctionedCardsToGameUserMessage extends Messages {
-
-
-  @Type(() => AuctionedCard)
-  public auctionedCards: AuctionedCard;
+  bidder:number;
 }
+export enum UsedFor {
+  gameCards = 0,
+  userCards,
+  historyCards,
+}
+
+
+
 
 export class AuctionedCard {
 
@@ -194,17 +200,19 @@ export class AuctionedCard {
 }
 
 
-export class GetNameCard {
-  cardId:number;
 
-  bidder:number;
-}
-export enum UsedFor {
-  gameCards = 0,
-  userCards,
-  historyCards,
-}
+export class AuctionedCardsToGameUserMessage extends Messages {
 
+
+  @Type(() => AuctionedCard)
+  public auctionedCards: AuctionedCard;
+  constructor(
+    gameCards:AuctionedCard,
+  ) {
+    super();
+    this.auctionedCards = gameCards;
+  }
+}
 
 
 export class AuctionCardToUserServiceTopic extends Topic {

@@ -103,15 +103,6 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
     queue: string;
     routingKey: string;
 }
-export declare class AuctionedCardsToGameUserMessage extends Messages {
-    auctionedCards: AuctionedCard;
-}
-export declare class AuctionedCard {
-    cards: GetNameCard[];
-    usedFor: UsedFor | (boolean | undefined);
-    userId: number;
-    toAll: boolean;
-}
 export declare class GetNameCard {
     cardId: number;
     bidder: number;
@@ -120,6 +111,16 @@ export declare enum UsedFor {
     gameCards = 0,
     userCards = 1,
     historyCards = 2
+}
+export declare class AuctionedCard {
+    cards: GetNameCard[];
+    usedFor: UsedFor | (boolean | undefined);
+    userId: number;
+    toAll: boolean;
+}
+export declare class AuctionedCardsToGameUserMessage extends Messages {
+    auctionedCards: AuctionedCard;
+    constructor(gameCards: AuctionedCard);
 }
 export declare class AuctionCardToUserServiceTopic extends Topic {
     messageType: AuctionCardToUserServiceMessage;
