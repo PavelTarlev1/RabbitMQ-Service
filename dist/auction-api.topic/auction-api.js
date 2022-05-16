@@ -173,7 +173,7 @@ class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
 }
 __decorate([
     (0, class_transformer_1.Type)(() => AuctionedCard),
-    __metadata("design:type", Array)
+    __metadata("design:type", AuctionedCard)
 ], AuctionedCardsToGameUserMessage.prototype, "auctionedCards", void 0);
 exports.AuctionedCardsToGameUserMessage = AuctionedCardsToGameUserMessage;
 class AuctionedCard {
