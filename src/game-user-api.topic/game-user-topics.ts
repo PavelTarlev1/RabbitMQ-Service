@@ -1,8 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
 import { MessageGameInfo, MessageId, Messages } from "../abstract.messages/Messages";
-import { Type } from "class-transformer";
-import { AuctionedCard, HistoryCards } from "../auction-api.topic/auction-api";
 
 
 // Creation --- >
@@ -189,54 +187,16 @@ export class AuctionGetCardInfoMessage extends Messages {
   public userId: number;
   public toAll: boolean;
 
-  @Type(() => ResultAuctionedCards)
-  public gameCards: ResultAuctionedCards[];
-  @Type(() => ResultPlayerCards)
-  public playerCards: ResultPlayerCards [];
-  @Type(() => ResultHistoryCards)
-  public historyCards: ResultHistoryCards[];
+
 
   constructor(userId: number,
-    gameCards: ResultAuctionedCards[],
-    playerCards: ResultPlayerCards[],
-    historyCards:ResultHistoryCards[],
+
     toAll: boolean) {
     super();
-    this.playerCards = playerCards;
-    this.gameCards = gameCards;
-    this.historyCards = historyCards;
     this.userId = userId;
     this.toAll = toAll;
   }
 
-}
-
-export class ResultAuctionedCards {
-  cardId: number;
-
-  goldCost: number;
-
-  creditCost: number;
-
-  bidderName?: string;
-}
-
-export class ResultPlayerCards {
-  cardId: number;
-
-  goldCost: number;
-
-  creditCost: number;
-
-  bidderName?: string;
-}
-
-export class ResultHistoryCards {
-  cardId: number;
-
-  wonBy: string;
-
-  wonOn: Date;
 }
 
 export class AuctionCardToCardServiceTopic extends Topic {

@@ -99,27 +99,7 @@ export declare class AuctionGetCardInfoTopic extends Topic {
 export declare class AuctionGetCardInfoMessage extends Messages {
     userId: number;
     toAll: boolean;
-    gameCards: ResultAuctionedCards[];
-    playerCards: ResultPlayerCards[];
-    historyCards: ResultHistoryCards[];
-    constructor(userId: number, gameCards: ResultAuctionedCards[], playerCards: ResultPlayerCards[], historyCards: ResultHistoryCards[], toAll: boolean);
-}
-export declare class ResultAuctionedCards {
-    cardId: number;
-    goldCost: number;
-    creditCost: number;
-    bidderName?: string;
-}
-export declare class ResultPlayerCards {
-    cardId: number;
-    goldCost: number;
-    creditCost: number;
-    bidderName?: string;
-}
-export declare class ResultHistoryCards {
-    cardId: number;
-    wonBy: string;
-    wonOn: Date;
+    constructor(userId: number, toAll: boolean);
 }
 export declare class AuctionCardToCardServiceTopic extends Topic {
     messageType: AuctionCardToCardServiceMessage;

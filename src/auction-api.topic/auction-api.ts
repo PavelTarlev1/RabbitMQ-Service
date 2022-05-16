@@ -1,7 +1,6 @@
 import { Topic } from "../abstract.topic";
 import { ExchangeHolding, ExchangeType } from "../providers/providers";
-import { MessageId, Messages } from "../abstract.messages/Messages";
-import exp from "constants";
+import {  Messages } from "../abstract.messages/Messages";
 import { Type } from "class-transformer";
 
 
@@ -175,54 +174,43 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 
 }
 
-
-
-
-
-
 export class AuctionedCardsToGameUserMessage extends Messages {
-  public userId: number;
-  public toAll: boolean;
   @Type(() => AuctionedCard)
   public gameCards: AuctionedCard[];
-  @Type(() => AuctionedCard)
-  public playerCards:AuctionedCard [];
-  @Type(() => HistoryCards)
-  public historyCards:HistoryCards[];
-
 
   constructor(
-    userId:number,
     gameCards:AuctionedCard[],
-    playerCards: AuctionedCard[],
-    historyCards: HistoryCards[] ,toAll?: boolean) {
+  ) {
     super();
-    this.userId = userId;
     this.gameCards = gameCards;
-    this.playerCards = playerCards;
-    this.historyCards = historyCards;
-    this.toAll = toAll;
   }
 }
 
 export class AuctionedCard {
-  cardId: number;
-  goldCost:number;
-  creditCost: number;
-  bidderId?: number;
+
+  public cards:GetNameCard[];
+
+  public usedFor:UsedFor | (boolean | undefined);
+
+  public userId:number;
+
+  public toAll:boolean;
+
 }
 
-export class HistoryCards {
+
+export class GetNameCard {
   cardId:number;
-  wonByWhoId?:number;
-  cost?:number;
-  wonOn?:Date;
-  wonWith:WonWith
+
+  bidder:number;
 }
-export enum WonWith{
-  credits,
-  gold,
+export enum UsedFor {
+  gameCards = 0,
+  userCards,
+  historyCards,
 }
+
+
 
 export class AuctionCardToUserServiceTopic extends Topic {
   messageType: AuctionCardToUserServiceMessage;

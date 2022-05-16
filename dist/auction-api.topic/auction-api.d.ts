@@ -104,29 +104,23 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
     routingKey: string;
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
-    userId: number;
-    toAll: boolean;
     gameCards: AuctionedCard[];
-    playerCards: AuctionedCard[];
-    historyCards: HistoryCards[];
-    constructor(userId: number, gameCards: AuctionedCard[], playerCards: AuctionedCard[], historyCards: HistoryCards[], toAll?: boolean);
+    constructor(gameCards: AuctionedCard[]);
 }
 export declare class AuctionedCard {
-    cardId: number;
-    goldCost: number;
-    creditCost: number;
-    bidderId?: number;
+    cards: GetNameCard[];
+    usedFor: UsedFor | (boolean | undefined);
+    userId: number;
+    toAll: boolean;
 }
-export declare class HistoryCards {
+export declare class GetNameCard {
     cardId: number;
-    wonByWhoId?: number;
-    cost?: number;
-    wonOn?: Date;
-    wonWith: WonWith;
+    bidder: number;
 }
-export declare enum WonWith {
-    credits = 0,
-    gold = 1
+export declare enum UsedFor {
+    gameCards = 0,
+    userCards = 1,
+    historyCards = 2
 }
 export declare class AuctionCardToUserServiceTopic extends Topic {
     messageType: AuctionCardToUserServiceMessage;
