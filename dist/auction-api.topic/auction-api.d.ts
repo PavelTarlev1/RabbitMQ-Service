@@ -105,7 +105,6 @@ export declare class AuctionedCardsToGameUserTopic extends Topic {
 }
 export declare class AuctionedCardsToGameUserMessage extends Messages {
     auctionedCards: AuctionedCard;
-    constructor(gameCards: AuctionedCard);
 }
 export declare class AuctionedCard {
     cards: GetNameCard[];

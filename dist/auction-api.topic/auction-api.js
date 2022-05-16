@@ -166,10 +166,6 @@ class AuctionedCardsToGameUserTopic extends abstract_topic_1.Topic {
 exports.AuctionedCardsToGameUserTopic = AuctionedCardsToGameUserTopic;
 class AuctionedCardsToGameUserMessage extends Messages_1.Messages {
     auctionedCards;
-    constructor(gameCards) {
-        super();
-        this.auctionedCards = gameCards;
-    }
 }
 __decorate([
     (0, class_transformer_1.Type)(() => AuctionedCard),

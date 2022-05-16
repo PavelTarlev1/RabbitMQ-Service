@@ -175,15 +175,10 @@ export class AuctionedCardsToGameUserTopic extends Topic {
 }
 
 export class AuctionedCardsToGameUserMessage extends Messages {
+
+
   @Type(() => AuctionedCard)
   public auctionedCards: AuctionedCard;
-
-  constructor(
-    gameCards:AuctionedCard,
-  ) {
-    super();
-    this.auctionedCards = gameCards;
-  }
 }
 
 export class AuctionedCard {
