@@ -181,7 +181,8 @@ export declare class AuctionReturnCardsTopic extends Topic {
 declare class ReturnCard {
     cardId: number;
     bidder: number;
-    name: string;
+    bidderName: string;
+    cardName: string;
     attack: number;
     health: number;
 }

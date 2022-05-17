@@ -283,7 +283,8 @@ exports.AuctionReturnCardsTopic = AuctionReturnCardsTopic;
 class ReturnCard {
     cardId;
     bidder;
-    name;
+    bidderName;
+    cardName;
     attack;
     health;
 }

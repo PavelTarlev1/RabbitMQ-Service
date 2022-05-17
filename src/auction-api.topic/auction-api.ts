@@ -318,11 +318,14 @@ class ReturnCard {
 
   bidder:number;
 
-  name:string;
+  bidderName:string;
+
+  cardName:string;
 
   attack:number;
 
   health:number;
+
 
 }
 
