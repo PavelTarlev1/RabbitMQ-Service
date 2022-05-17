@@ -179,7 +179,7 @@ export class NamedCard {
 
   bidder: number;
 
-  name: string | undefined | null;
+  bidderName:string;
 }
 
 export enum UsedFor {

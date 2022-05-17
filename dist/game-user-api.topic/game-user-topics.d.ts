@@ -92,7 +92,7 @@ export declare class BuyCardResponseMessage extends Messages {
 export declare class NamedCard {
     cardId: number;
     bidder: number;
-    name: string | undefined | null;
+    bidderName: string;
 }
 export declare enum UsedFor {
     gameCards = 0,

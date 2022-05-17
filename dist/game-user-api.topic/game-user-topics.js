@@ -160,7 +160,7 @@ exports.BuyCardResponseMessage = BuyCardResponseMessage;
 class NamedCard {
     cardId;
     bidder;
-    name;
+    bidderName;
 }
 exports.NamedCard = NamedCard;
 var UsedFor;
